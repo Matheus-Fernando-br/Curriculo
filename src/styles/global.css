@@ -1,7 +1,10 @@
 :root {
-  --bg-color: #1a1a1a; /* preto mais claro */
-  --primary-color: #00ff00; /* verde principal */
-  --text-color: #ffffff;
+  --bg-color: #1a1a1ada; 
+  --primary-color: #00c3ff;
+  --second-color: #0046c7e7;
+
+  --text-color-white: #ffffff;
+  --text-color-black: #000000;
 }
 
 /* reset básico */
@@ -13,34 +16,64 @@
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
+  color: var(--text-color-white);
+  background-size: cover;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
+/* Header */
 a {
   text-decoration: none;
-  color: var(--text-color);
+  color: var(--text-color-white);
 }
 
 header {
   display: flex;
+  width: 100%;
+  position: fixed;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 2rem 2rem;
   background-color: #111;
+  z-index: 1000;
+}
+
+header h2 {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.5rem;
+  gap: 3rem;
 }
 
 nav ul li {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  position: relative;
+  padding: 0.5rem 0;
 }
+
+nav ul li::before,
+nav ul li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background-color: var(--text-color-white);
+  transform: scaleX(1);
+  transition: transform 0.3s ease, top 0.3s ease, bottom 0.3s ease;
+}
+
+nav ul li::before { top: 0; }
+nav ul li::after { bottom: 0; }
+
+nav ul li:hover::before { top: -5px; transform: scaleX(1.1); background-color: var(--primary-color);}
+nav ul li:hover::after { bottom: -5px; transform: scaleX(1.1); background-color: var(--primary-color);}
 
 nav ul li a:hover {
   color: var(--primary-color);
@@ -52,22 +85,330 @@ nav ul li a:hover {
   cursor: pointer;
 }
 
+/* Fundo */
+.Content {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: url('../../public/Images/Fundo.jpeg') no-repeat center center;
+  background-size: cover;
+}
+
+/* Cards - container principal */
+.cards {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* Lado esquerdo fixo */
+.lado-esquerdo {
+  width: 30vw;
+  background-color: var(--bg-color);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+}
+
+.lado-esquerdo::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5vw;
+  height: 100%;
+  background: linear-gradient(to right, rgba(26,26,26,0), var(--text-color-black));
+  pointer-events: none;
+}
+
+.sidebar img.profile-img {
+  margin-top: 20vh;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 3px solid var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+.sidebar .social-links {
+  display: flex;
+  justify-content: center; 
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  color: var(--text-color-white);
+  font-size: 1.4rem;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: var(--primary-color);
+}
+
+.sidebar .btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.7rem 1.5rem;
+  background-color: var(--primary-color);
+  color: var(--text-color-black);
+  border-radius: 8px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.sidebar .btn:hover {
+  background-color: var(--second-color);
+  transform: scale(0.98);
+  box-shadow: 0 0 1px var(--text-color-white);
+}
+
+/* Botão WhatsApp fixo dentro da sidebar */
+.btn-Whatssap {
+  position: absolute;
+  bottom: 3vh;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1100;
+}
+
+.btn-Whatssap button {
+  font-weight: bold;
+  background: #12a504;
+  color: var(--text-color-white);
+  padding: 1rem 1.2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  animation: pular 3s infinite ease-in-out;
+  transition: all .5s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.btn-Whatssap button:hover {
+  background: #085f00;
+  text-shadow: 0 0 5px #00ff62;
+  animation: none;
+  transform: translateY(-10%);
+}
+
+.btn-Whatssap i {
+  font-size: 1.3rem;
+}
+
+@keyframes pular {
+  0%, 60%, 100% { transform: translateY(0); }
+  20% { transform: translateY(-12px); }
+  30% { transform: translateY(0); }
+  40% { transform: translateY(-8px); }
+  50% { transform: translateY(0); }
+}
+
+/* Lado direito rolável */
+.lado-direito {
+  margin-left: 30vw; /* largura da sidebar */
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: var(--text-color-black);
+  color: var(--text-color-white);
+  gap: 3rem;
+  overflow-y: auto;
+}
+
+/* Conteúdo interno do lado direito */
+.lado-direito-scroll {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.lado-direito h2 {
+  margin-top: 6rem;
+  margin-bottom: 2rem;
+}
+
+/* Presets */
+.Cor-Primaria {
+  color: var(--primary-color);
+}
+
+/* Card */
+.card {
+  background: transparent;
+  border-left: 3px solid var(--primary-color);
+  padding-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.card-header i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.card-header h3, .card-header h4 {
+  font-size: 1.1rem;
+  color: var(--text-color-white);
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.card-content p {
+  font-size: 0.9rem;
+  color: var(--text-color-white);
+  line-height: 1.4;
+}
+
+/* Top Section */
+.top-section {
+  display: grid;
+  grid-template-columns: 2fr 1fr; 
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+}
+
+.top-section .info-pessoal {
+  border-left: 3px solid var(--primary-color);
+  margin-top: 6rem;
+}
+
+.educacao, .competencias {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.competencias-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.tag {
+  background-color: var(--primary-color);
+  color: var(--text-color-black);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: 0.3s;
+  cursor: default;
+}
+
+.tag:hover {
+  background-color: var(--second-color);
+  transform: scale(1.05);
+}
+
+/* Bottom Section */
+.bottom-section.full {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Contato */
+.contact-area {
+  margin-top: 2rem;
+}
+
+.contact-area ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
+}
+
+.contact-area li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background: #111;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  transition: 0.3s;
+  border-left: 3px solid var(--primary-color);
+}
+
+.contact-area li i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  margin-right: 1rem;
+}
+
+.contact-area li a {
+  color: var(--text-color-white);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.contact-area li:hover {
+  background: #1f1f1f;
+  transform: scale(1.02);
+}
+
+.contact-area li a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsividade */
 @media (max-width: 900px) {
+  .cards {
+    flex-direction: column;
+  }
+  .lado-esquerdo {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+  .lado-direito {
+    margin-left: 0;
+    height: auto;
+    overflow: visible;
+  }
+  .top-section, .bottom-section {
+    grid-template-columns: 1fr;
+  }
   nav ul {
     position: absolute;
     top: 70px;
     right: 0;
-    background-color: #111;
     flex-direction: column;
     width: 200px;
     padding: 1rem;
     display: none;
   }
-
   nav ul.active {
     display: flex;
   }
-
   .menu-toggle {
     display: block;
   }

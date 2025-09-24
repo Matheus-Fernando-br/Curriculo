@@ -5,13 +5,11 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  }
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
   return (
     <header>
-      <h2>Matheus F.</h2>
+      <h2>Matheus Fernando Ribeiro Martins</h2>
       <nav>
         <i className="bi bi-list menu-toggle" onClick={toggleMenu}></i>
         <ul className={menuOpen ? "active" : ""}>

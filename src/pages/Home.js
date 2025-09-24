@@ -1,10 +1,18 @@
 import React from "react";
+import Sidebar from "../components/Sidebar";
 
 function Home() {
   return (
-    <main style={{ padding: "2rem", textAlign: "center" }}>
-      <h1>Matheus Fernando</h1>
-      <h3>Analista de TI</h3>
+    <main className="Content">
+      <section className="cards">
+        <section className="lado-esquerdo">
+          <Sidebar />
+        </section>
+        <section className="lado-direito">
+          <h2><i className="bi bi-house-door"></i> Bem-vindo!</h2>
+          <p>Aqui você pode conhecer um pouco mais sobre minha trajetória, minhas habilidades e projetos.</p>
+        </section>
+      </section>
     </main>
   )
 }
