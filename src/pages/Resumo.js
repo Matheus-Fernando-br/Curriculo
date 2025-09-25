@@ -74,7 +74,22 @@ function Resumo() {
                 </div>
                 <div className="card-content">
                   <span>Fev/2024 – Jul/2025</span>
-                  <p>Descrição que você vai alterar depois.</p>
+                  <p>Elaboração de relatório gerencial, semanal e mensal; Efetua lançamento de medições e ordens no
+                    sistema E-Fornecedores; Realiza programação mensal de andaimes; Lançamento de custos no
+                    SAP; Planejamento de atividades, realização de relatórios de fechamento de medição e atualiza
+                    diário a mudança de turno dos colaboradores;
+                  </p>
+                </div>
+              </div>
+              <div className="card">
+                <div className="card-header">
+                  <i className="bi bi-briefcase"></i>
+                  <h4>CENIBRA - Celulose Nipo Brasileira S. A.</h4>
+                </div>
+                <div className="card-content">
+                  <span>Jul/2023 – Dez/2023</span>
+                  <p>Participou e contribuiu em reuniões de planejamentos semanais, preenchimento referente ao relatório de análise preventiva de risco industrial e diálogo diário de segurança. Experiência com fiscalização das atividades de pintura industrial, visto que o empregado realizava medições em peças jateadas no canteiro de obras, adquirindo conhecimentos sobre como o processo é realizado. Obteve conhecimento sobre o processo de isolamento térmico, o qual o empregado também teve experiências em medições e como o processo de montagem e desmontagem é feito. Participou de fiscalização de obra civil, acompanhando o processo de manutenção de patologias geradas pelo processo industrial junto a processos de medição de obra civil na área e controle de lançamento de custos, fechamento de medidas gerais e processos de compras, com conhecimento no programa MS Project, em realizar planejamento de atividades, paradas e como acompanhar e atualizar o processo pelo
+programa dentro da área da CENIBRA.</p>
                 </div>
               </div>
             </div>

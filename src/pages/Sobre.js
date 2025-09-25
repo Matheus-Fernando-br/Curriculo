@@ -63,11 +63,27 @@ function Sobre() {
                 text="Cadastre seus clientes, produtos e serviços e emita uma NF com poucos cliques!"
               />
               </a>
+              <a href="https://github.com/Matheus-Fernando-br/Reserva-Restaurante" target="blank">
               <Card 
                 icon="bi-laptop" 
                 title="Reserva de Restaurante em JAVA" 
                 text="Intuito de gerenciar reservas em restaurante, com fluxo completo de seleção de data, horário, mesa e informações do cliente." 
               />
+              </a>
+              <a href="https://github.com/Matheus-Fernando-br/Simple-Calculator-Project" target="blank">
+              <Card 
+                icon="bi-laptop" 
+                title="Simple Calculator Project" 
+                text="Este projeto é um aplicativo básico de calculadora desenvolvido como parte de uma tarefa escolar. O desafio único deste projeto foi criar uma calculadora funcional sem utilizar nenhum gerenciador de layout." 
+              />
+              </a>
+              <a href="https://github.com/Matheus-Fernando-br/Mario-Game" target="blank">
+              <Card 
+                icon="bi-laptop" 
+                title="Simple Mario Jump Game" 
+                text="Este é um jogo básico de salto com tema de Mario criado usando HTML, CSS e JavaScript. Neste jogo, você controla Mario como ele salta sobre canos. O objetivo é evitar a colisão com os canos pelo maior tempo possível." 
+              />
+              </a>
             </div>
 
             <div className="cursos">
@@ -81,6 +97,11 @@ function Sobre() {
                 icon="bi-book" 
                 title="Liderança: como desenvolver times de alta performance" 
                 text="SEBRAE" 
+              />
+              <Card 
+                icon="bi-book" 
+                title="Python do zero ao avançado" 
+                text="Udemy" 
               />
             </div>
           </div>
