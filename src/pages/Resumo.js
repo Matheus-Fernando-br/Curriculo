@@ -28,6 +28,16 @@ function Resumo() {
                     <p>Engenharia de Software</p>
                   </div>
                 </div>
+                <div className="card">
+                  <div className="card-header">
+                    <i className="bi bi-mortarboard"></i>
+                    <h4>CEFET-MG</h4>
+                  </div>
+                  <div className="card-content">
+                    <span>2022 – 2023</span>
+                    <p>Técnico em Edificações</p>
+                  </div>
+                </div>
               </div>
 
               {/* Competências */}
@@ -63,7 +73,7 @@ function Resumo() {
                 </div>
                 <div className="card-content">
                   <span>Jul/2025 – Atual</span>
-                  <p>Descrição que você vai alterar depois.</p>
+                  <p> Expertise em infraestrutura de rede robusta (LAN/WLAN) e administração de sistemas escaláveis. Proficiente em troubleshooting avançado e otimização de performance de hardware/software. Habilidade em operar e manter sistemas audiovisuais complexos (som, iluminação, projeção) e em identificar oportunidades de melhoria contínua de processos para eficiência operacional e pedagógica em ambientes educacionais dinâmicos. Busco aplicar competências em um ecossistema tecnológico inovador.</p>
                 </div>
               </div>
 
@@ -74,10 +84,13 @@ function Resumo() {
                 </div>
                 <div className="card-content">
                   <span>Fev/2024 – Jul/2025</span>
-                  <p>Elaboração de relatório gerencial, semanal e mensal; Efetua lançamento de medições e ordens no
-                    sistema E-Fornecedores; Realiza programação mensal de andaimes; Lançamento de custos no
-                    SAP; Planejamento de atividades, realização de relatórios de fechamento de medição e atualiza
-                    diário a mudança de turno dos colaboradores;
+                  <p>Profissional com sólida experiência em Business Intelligence (BI), especializada na elaboração de relatórios gerenciais e análise de dados para a geração de insights estratégicos e suporte à tomada de decisão.
+                    <br />
+                    Experiência em administração de sistemas, incluindo instalação, atualização e manutenção proativa, com foco na resolução de incidentes críticos e correção de bugs em redes para garantir a continuidade operacional.
+                    <br />
+                    Capacidade técnica em manutenção de hardware e software, realizando formatação e otimização de sistemas para maximizar a performance. Abrangente atuação em suporte técnico corporativo, assegurando a resolução eficaz de demandas de TI em toda a organização.
+                    <br />
+                    Adicionalmente, possui conhecimento em gestão de processos de RH, com ênfase em medição e processamento de folhas de pagamento através da plataforma E-Fornecedores, demonstrando versatilidade e domínio em áreas-chave de suporte administrativo e tecnológico.
                   </p>
                 </div>
               </div>
