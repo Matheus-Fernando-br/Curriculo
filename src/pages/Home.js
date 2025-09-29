@@ -26,7 +26,7 @@ function Home() {
   ];
   
   return (
-    <main className="Content">
+    <main className="Content page-home">
       <section className="cards">
         {/* Sidebar */}
         <section className="lado-esquerdo">
@@ -80,8 +80,8 @@ function Home() {
           {/* Testemunhos */}
           <div className="testemunhos">
             <h3>O que dizem sobre mim</h3>
-            <blockquote>"Profissional dedicado e sempre pronto para aprender!" – Colega X</blockquote>
-            <blockquote>"Entrega sempre no prazo e com qualidade." – Cliente Y</blockquote>
+            <blockquote><span className="Cor-Primaria">"</span> Profissional dedicado e sempre pronto para aprender! <span className="Cor-Primaria">"</span> – Funcionários NM Engenharia</blockquote>
+            <blockquote><span className="Cor-Primaria">"</span> Entrega sempre no prazo e com qualidade. <span className="Cor-Primaria">"</span> – Funcionários Cenibra</blockquote>
           </div>
 
           {/* Estatísticas */}

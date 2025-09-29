@@ -1,18 +1,18 @@
+// src/components/Card.jsx
 import React from "react";
 
-function Card({ icon, title, subtitle, text }) {
+function Card({ icon, title, subtitle, text, details }) {
   return (
     <div className="card">
-      <div className="card-header">
-        <i className={`bi ${icon}`}></i>
-        <h3>{title}</h3>
-      </div>
+      {icon && <i className={`bi ${icon}`}></i>}
       <div className="card-content">
-        {subtitle && <span className="card-subtitle">{subtitle}</span>}
+        {title && <h3>{title}</h3>}
+        {subtitle && <p className="subtitle">{subtitle}</p>}
         {text && <p>{text}</p>}
+        {details && <p className="details">{details}</p>}
       </div>
     </div>
-  )
+  );
 }
 
 export default Card;

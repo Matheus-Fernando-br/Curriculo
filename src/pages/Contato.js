@@ -3,7 +3,7 @@ import Sidebar from "../components/Sidebar";
 
 function Contato() {
   return (
-    <main className="Content">
+    <main className="Content page-contato">
       <section className="cards">
         {/* Lado esquerdo fixo */}
         <section className="lado-esquerdo">

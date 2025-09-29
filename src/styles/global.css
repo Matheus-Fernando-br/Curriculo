@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;600&display=swap');
+
+/* Variáveis de cores */
 :root {
   --bg-color: #1a1a1ada; 
   --primary-color: #00c3ff;
@@ -7,12 +10,29 @@
   --text-color-black: #000000;
 }
 
-/* reset básico */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Poppins', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background-color: #1a1a1a; /* cor sólida inicial evita flash branco */
+  overflow-x: hidden;
+  color: var(--text-color-white);
+}
+
+/* --- TRANSIÇÃO SUAVE PARA TODO O BODY --- */
+body {
+  opacity: 0;
+  animation: fadeBody 0.5s forwards;
+}
+
+@keyframes fadeBody {
+  to { opacity: 1; }
 }
 
 body {
@@ -21,6 +41,8 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
 }
+
+
 
 /* Header */
 a {
@@ -35,12 +57,14 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 2rem 2rem;
-  background-color: #111;
+  background-color: #0000008f;
+  backdrop-filter: blur(10px);
   z-index: 1000;
 }
 
 header h2 {
-  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 1px;
 }
 
 nav ul {
@@ -55,6 +79,7 @@ nav ul li {
   gap: 0.5rem;
   position: relative;
   padding: 0.5rem 0;
+  font-family: 'Orbitron', sans-serif;
 }
 
 nav ul li::before,
@@ -92,6 +117,7 @@ nav ul li a:hover {
   height: 100vh;
   background: url('../../public/Images/Fundo.jpeg') no-repeat center center;
   background-size: cover;
+  animation: fadeIn 1s ease-in-out;
 }
 
 /* Cards - container principal */
@@ -99,6 +125,7 @@ nav ul li a:hover {
   display: flex;
   width: 100%;
   height: 100%;
+  animation: slideUp 0.7s ease-in-out;
 }
 
 /* Lado esquerdo fixo */
@@ -130,6 +157,8 @@ nav ul li a:hover {
   margin-top: 20vh;
   width: 180px;
   height: 180px;
+  object-fit: cover;
+  object-position: center;
   border-radius: 50%;
   border: 3px solid var(--primary-color);
   margin-bottom: 1rem;
@@ -161,6 +190,7 @@ nav ul li a:hover {
   border-radius: 8px;
   font-weight: bold;
   transition: 0.3s;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .sidebar .btn:hover {
@@ -169,13 +199,12 @@ nav ul li a:hover {
   box-shadow: 0 0 1px var(--text-color-white);
 }
 
-/* Botão WhatsApp fixo dentro da sidebar */
+/* --- Botão WhatsApp --- */
 .btn-Whatssap {
-  position: absolute;
+  position: absolute;   /* desktop: preso na sidebar */
   bottom: 3vh;
   left: 50%;
   transform: translateX(-50%);
-  z-index: 1100;
 }
 
 .btn-Whatssap button {
@@ -192,6 +221,7 @@ nav ul li a:hover {
   display: flex;
   align-items: center;
   gap: 0.3rem;
+  font-family: 'Poppins', sans-serif;
 }
 
 .btn-Whatssap button:hover {
@@ -206,11 +236,11 @@ nav ul li a:hover {
 }
 
 @keyframes pular {
-  0%, 60%, 100% { transform: translateY(0); }
-  20% { transform: translateY(-12px); }
-  30% { transform: translateY(0); }
-  40% { transform: translateY(-8px); }
-  50% { transform: translateY(0); }
+ 0%, 60%, 100% { transform: translateY(0); } 
+ 20% { transform: translateY(-20px); } 
+ 30% { transform: translateY(0); } 
+ 40% { transform: translateY(-10px); } 
+ 50% { transform: translateY(0); }
 }
 
 /* Lado direito rolável */
@@ -225,6 +255,7 @@ nav ul li a:hover {
   color: var(--text-color-white);
   gap: 3rem;
   overflow-y: auto;
+  animation: slideUp 0.7s ease-in-out;
 }
 
 /* Conteúdo interno do lado direito */
@@ -360,8 +391,10 @@ nav ul li a:hover {
 }
 
 /* Contato */
+
 .contact-area {
   margin-top: 2rem;
+  background: none !important;
 }
 
 .contact-area ul {
@@ -452,16 +485,75 @@ nav ul li a:hover {
   margin-bottom: 1rem;
 }
 
-
 /*Sobre*/
 .sobre-mim p {
   max-width: 30vw;
   text-align: justify;
 }
 
-/* Responsividade */
+/* Animação de carregamento de progresso (30%) */
+.progress-container {
+  width: 100%;
+  background-color: #333;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  height: 20px;
+  width: 0;
+  background-color: var(--primary-color);
+  border-radius: 10px;
+  animation: loadProgress 2s forwards;
+}
+
+@keyframes loadProgress {
+  0% { width: 0%; }
+  100% { width: 30%; }
+}
+
+/* Animações das páginas */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+  from { transform: translateX(30px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+/* Aplicação das animações por página */
+.page-home { animation: zoomIn 1s ease forwards; }
+.page-sobre { animation: slideLeft 0.8s ease forwards; }
+.page-resumo { animation: slideLeft 0.8s ease forwards; }
+.page-contato { animation: slideUp 0.8s ease forwards; }
+
 /* Responsividade */
 @media (max-width: 900px) {
+
+  .projetos {
+    margin-top: 2rem;
+  }
+
+  .estatisticas-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    text-align: center;
+  }
+
   .cards {
     flex-direction: column;
   }
@@ -540,21 +632,9 @@ nav ul li a:hover {
     display: block;
   }
 
-  /* botão WhatsApp fixo no canto inferior direito */
-  .btn-Whatssap {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .btn-Whatssap button {
-    padding: 0.8rem 1rem;
-    font-size: 1rem;
-  }
-
-  .btn-Whatssap i {
-    font-size: 1.1rem;
+  /* botão WhatsApp fixo no canto inferior central */
+.btn-Whatssap {
+    position: relative;
+    opacity: 0;
   }
 }
-

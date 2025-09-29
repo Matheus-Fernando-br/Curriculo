@@ -1,9 +1,48 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
+import Experiencia from "../components/Experiencia";
+
 
 function Resumo() {
+    const iconeOK = <i class="bi bi-check"></i>;
+    const experienciasData = [
+    {
+      empresa: "Colégio Genoma",
+      periodo: "Jul/2025 – Atual",
+      descricao: [
+        "Expertise em infraestrutura de rede robusta (LAN/WLAN) e administração de sistemas escaláveis.",
+        "Proficiente em troubleshooting avançado e otimização de performance de hardware/software.",
+        "Habilidade em operar e manter sistemas audiovisuais complexos (som, iluminação, projeção).",
+        "Identificação de oportunidades de melhoria contínua de processos para eficiência operacional e pedagógica.",
+        "Busca aplicar competências em ecossistemas tecnológicos inovadores."
+      ]
+    },
+    {
+      empresa: "NM Engenharia",
+      periodo: "Fev/2024 – Jul/2025",
+      descricao: [
+        "Experiência em Business Intelligence (BI), elaboração de relatórios e análise de dados para insights estratégicos.",
+        "Administração de sistemas: instalação, atualização e manutenção proativa, resolução de incidentes críticos.",
+        "Manutenção de hardware e software, formatação e otimização para maximizar performance.",
+        "Suporte técnico corporativo, garantindo resolução eficaz de demandas de TI.",
+        "Conhecimento em processos de RH: medição e processamento de folhas de pagamento via E-Fornecedores."
+      ]
+    },
+    {
+      empresa: "CENIBRA - Celulose Nipo Brasileira S. A.",
+      periodo: "Jul/2023 – Dez/2023",
+      descricao: [
+        "Participação em reuniões de planejamento semanal e relatórios de análise preventiva de risco industrial.",
+        "Fiscalização de pintura industrial e medições em peças jateadas.",
+        "Conhecimento em processos de isolamento térmico, montagem e desmontagem.",
+        "Fiscalização de obra civil, manutenção de patologias, medições e controle de custos.",
+        "Planejamento de atividades e paradas usando MS Project, acompanhamento e atualização de processos."
+      ]
+    }
+  ];
+
   return (
-    <main className="Content">
+    <main className="Content page-resumo">
       <section className="cards">
         <section className="lado-esquerdo">
           <Sidebar />
@@ -65,46 +104,14 @@ function Resumo() {
             {/* Experiências */}
             <div className="bottom-section full">
               <h3><i className="bi bi-briefcase"></i> Experiências</h3>
-
-              <div className="card">
-                <div className="card-header">
-                  <i className="bi bi-briefcase"></i>
-                  <h4>Colégio Genoma</h4>
-                </div>
-                <div className="card-content">
-                  <span>Jul/2025 – Atual</span>
-                  <p> Expertise em infraestrutura de rede robusta (LAN/WLAN) e administração de sistemas escaláveis. Proficiente em troubleshooting avançado e otimização de performance de hardware/software. Habilidade em operar e manter sistemas audiovisuais complexos (som, iluminação, projeção) e em identificar oportunidades de melhoria contínua de processos para eficiência operacional e pedagógica em ambientes educacionais dinâmicos. Busco aplicar competências em um ecossistema tecnológico inovador.</p>
-                </div>
-              </div>
-
-              <div className="card">
-                <div className="card-header">
-                  <i className="bi bi-briefcase"></i>
-                  <h4>NM Engenharia</h4>
-                </div>
-                <div className="card-content">
-                  <span>Fev/2024 – Jul/2025</span>
-                  <p>Profissional com sólida experiência em Business Intelligence (BI), especializada na elaboração de relatórios gerenciais e análise de dados para a geração de insights estratégicos e suporte à tomada de decisão.
-                    <br />
-                    Experiência em administração de sistemas, incluindo instalação, atualização e manutenção proativa, com foco na resolução de incidentes críticos e correção de bugs em redes para garantir a continuidade operacional.
-                    <br />
-                    Capacidade técnica em manutenção de hardware e software, realizando formatação e otimização de sistemas para maximizar a performance. Abrangente atuação em suporte técnico corporativo, assegurando a resolução eficaz de demandas de TI em toda a organização.
-                    <br />
-                    Adicionalmente, possui conhecimento em gestão de processos de RH, com ênfase em medição e processamento de folhas de pagamento através da plataforma E-Fornecedores, demonstrando versatilidade e domínio em áreas-chave de suporte administrativo e tecnológico.
-                  </p>
-                </div>
-              </div>
-              <div className="card">
-                <div className="card-header">
-                  <i className="bi bi-briefcase"></i>
-                  <h4>CENIBRA - Celulose Nipo Brasileira S. A.</h4>
-                </div>
-                <div className="card-content">
-                  <span>Jul/2023 – Dez/2023</span>
-                  <p>Participou e contribuiu em reuniões de planejamentos semanais, preenchimento referente ao relatório de análise preventiva de risco industrial e diálogo diário de segurança. Experiência com fiscalização das atividades de pintura industrial, visto que o empregado realizava medições em peças jateadas no canteiro de obras, adquirindo conhecimentos sobre como o processo é realizado. Obteve conhecimento sobre o processo de isolamento térmico, o qual o empregado também teve experiências em medições e como o processo de montagem e desmontagem é feito. Participou de fiscalização de obra civil, acompanhando o processo de manutenção de patologias geradas pelo processo industrial junto a processos de medição de obra civil na área e controle de lançamento de custos, fechamento de medidas gerais e processos de compras, com conhecimento no programa MS Project, em realizar planejamento de atividades, paradas e como acompanhar e atualizar o processo pelo
-programa dentro da área da CENIBRA.</p>
-                </div>
-              </div>
+              {experienciasData.map((exp, index) => (
+                <Experiencia
+                  key={index}
+                  empresa={exp.empresa}
+                  periodo={exp.periodo}
+                  descricao={exp.descricao}
+                />
+              ))}
             </div>
           </div> {/* lado-direito-scroll */}
         </section>

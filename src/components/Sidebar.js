@@ -12,7 +12,7 @@ function Sidebar() {
       />
 
       <h2>Matheus Fernando</h2>
-      <h4><i className="bi bi-laptop"></i> Analista de TI</h4>
+      <h4><span className="Cor-Primaria"><i className="bi bi-laptop"></i></span> Analista de TI</h4>
 
       {/* Currículo vinda do public */}
       <a href="/curriculo.pdf" className="btn" download>
@@ -20,14 +20,16 @@ function Sidebar() {
       </a>
 
       <div className="social-links">
-        <a href="https://github.com/Matheus-Fernando-br" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i></a>
+        <a href="https://github.com/Matheus-Fernando-br" target="_blank" rel="noopener noreferrer"><i className="bi bi-github"></i></a>
         <a href="https://www.linkedin.com/in/matheus-fernando-" target="_blank" rel="noreferrer">
-          <i class="bi bi-linkedin"></i>
+          <i className="bi bi-linkedin"></i>
         </a>
       </div>
 
       <div className="btn-Whatssap">
-        <a href="https://wa.me/5531986763652" target="_blank" rel="noopener noreferrer"> <button><i className="bi bi-whatsapp"></i>Whatssap</button></a>
+        <a href="https://wa.me/5531986763652" target="_blank" rel="noopener noreferrer">
+          <button><i className="bi bi-whatsapp"></i> WhatsApp</button>
+        </a>
       </div>
     </section>
   )

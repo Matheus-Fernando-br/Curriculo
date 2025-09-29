@@ -9,7 +9,7 @@ function Sobre() {
     const idade = anoAtual - 2004;
 
   return (
-    <main className="Content">
+    <main className="Content page-sobre">
       <section className="cards">
         <section className="lado-esquerdo">
           <Sidebar />
@@ -21,11 +21,9 @@ function Sobre() {
             <div className="sobre-mim">
                 <h2><i className="bi bi-person"></i> Sobre <span className="Cor-Primaria">Mim</span></h2>
                 <p>
-                    Atuo como Analista de TI e também presto serviços como freelancer na área. 
-                    Cuido de suporte técnico, manutenção de equipamentos, melhorias em sistemas 
-                    e atendimento interno, sempre focando em soluções práticas e eficientes. <br />
-                    Tenho facilidade com gestão de demandas, resolução de problemas e trabalho em equipe. 
-                    Busco constantemente evoluir com projetos, cursos e novas tecnologias.
+                    Sou Analista de TI e também atuo como freelancer em projetos de tecnologia. Tenho experiência em suporte técnico, manutenção de equipamentos, otimização de sistemas e atendimento interno, sempre buscando soluções práticas e eficientes.<br /><br />
+                    Possuo facilidade em gestão de demandas, resolução de problemas e trabalho em equipe, além de estar em constante aprendizado por meio de cursos, projetos e novas tecnologias.<br /><br />
+                    🚀 Vamos conversar? Tenho certeza de que minhas habilidades podem contribuir para o sucesso do seu projeto ou empresa.<br /><br />
                 </p>
             </div>
 
@@ -59,7 +57,10 @@ function Sobre() {
               <h2><i className="bi bi-diagram-3"></i> Projetos</h2>
               {projetos.map((p, index) => (
                 <a key={index} href={p.link} target="blank">
-                  <Card icon={p.icon} title={p.title} />
+                  <Card 
+                  icon={p.icon} 
+                  title={p.title} 
+                  details={p.details}/>
                 </a>
               ))}
             </div>
