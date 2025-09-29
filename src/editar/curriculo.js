@@ -150,7 +150,7 @@ function curriculo() {
       linkedin: "https://www.linkedin.com/in/matheus-ribeiro-7b4a9822b/",
       github: "https://github.com/Matheus-Fernando-br",
       telegram: "https://t.me/+5531986763652",
-      curriculo: "https://drive.google.com/file/d/1-1Yk3gk2Yc0XH5yGmJH1b8rX4F0F3bXn/view?usp=sharing",
+      curriculo: "/curriculo.pdf",
     },
   };
 }

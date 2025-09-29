@@ -21,9 +21,15 @@ function Sidebar() {
         </h4>
 
         {/* Currículo */}
-          <a href={dados.contatos.curriculo} className="btn" target="_blank" rel="noopener noreferrer">
-            📄 Baixar Currículo
-          </a>
+        <a 
+          href={dados.contatos.curriculo} 
+          className="btn" 
+          target="_blank" 
+          rel="noopener noreferrer"
+        >
+          📄 Baixar Currículo
+        </a>
+
 
           <div className="social-links">
             <a href={dados.contatos.github} target="_blank" rel="noopener noreferrer"><i className="bi bi-github"></i></a>
