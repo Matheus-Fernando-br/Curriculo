@@ -1,70 +1,121 @@
-# Getting Started with Create React App
+# 📌 Portfólio - Matheus Fernando
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um portfólio desenvolvido em **React** com o objetivo de centralizar todas as informações profissionais em um só lugar, de forma fácil de editar e manter.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Como funciona
 
-### `npm start`
+O projeto foi criado para ser **simples de atualizar**, sem precisar mexer em várias páginas ou componentes.
+Toda a estrutura é alimentada a partir de **um único arquivo**:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+📄 `src/editar/curriculo.js`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🔑 Estrutura principal
 
-### `npm test`
+* **Dados pessoais** → nome, idade, região, CNH, idioma etc.
+* **Sobre mim** → texto de apresentação.
+* **Projetos** → lista de projetos com título, link, ícone e descrição.
+* **Cursos** → cursos realizados, com título, descrição e ícone.
+* **Experiências** → experiências profissionais com ano, cargo e descrição.
+* **Contatos** → email, telefone, GitHub, LinkedIn, WhatsApp etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Exemplo (trecho do `curriculo.js`):
 
-### `npm run build`
+```js
+export default function curriculo() {
+  return {
+    nome: "Matheus Fernando Ribeiro Martins",
+    idade: 25,
+    cnh: "B",
+    idioma: "Português e Inglês",
+    regiao: "Minas Gerais - Brasil",
+    textoSobreMim: "Sou um desenvolvedor apaixonado por tecnologia...",
+    projetos: [
+      {
+        title: "Meu Projeto",
+        link: "https://github.com/usuario/projeto",
+        icon: "bi-github",
+        details: "Descrição do projeto."
+      }
+    ],
+    // ... e assim por diante
+  };
+}
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🖼️ Imagens
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Todas as imagens usadas no portfólio ficam dentro da pasta:
 
-### `npm run eject`
+📂 `public/Images/`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Exemplo:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* `Foto-Matheus.jpg` → foto de perfil.
+* `Logo.jpg` → favicon e pré-visualização nas redes sociais.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+👉 Basta substituir os arquivos mantendo o **mesmo nome** que eles já atualizam automaticamente no site.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 📄 Páginas
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+As páginas (`Home`, `Sobre`, `Resumo`, `Contato`, `Sidebar`, `Header`) **não precisam ser alteradas**.
+Elas **importam os dados direto do `curriculo.js`**, ou seja:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Mudou no `curriculo.js` → reflete em todas as páginas automaticamente.
 
-### Code Splitting
+Exemplo no `Header.jsx`:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```js
+import curriculo from "../editar/curriculo";
 
-### Analyzing the Bundle Size
+const dados = curriculo();
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<h2>{dados.nome}</h2>
+```
 
-### Making a Progressive Web App
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## ⚡ Tecnologias
 
-### Advanced Configuration
+* [React](https://react.dev/)
+* [React Router](https://reactrouter.com/)
+* [Bootstrap Icons](https://icons.getbootstrap.com/)
+* CSS puro (responsivo e customizado)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+---
 
-### Deployment
+## 🌐 Publicação
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Este projeto pode ser publicado facilmente na **Vercel** ou **Netlify**:
 
-### `npm run build` fails to minify
+### Vercel (recomendado)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Suba o projeto para o **GitHub**.
+2. Acesse [Vercel](https://vercel.com/).
+3. Clique em **New Project** → **Import GitHub Repository**.
+4. Selecione este repositório.
+5. Deploy automático em segundos 🚀
+
+---
+
+## ✨ Como editar
+
+1. Abra `src/editar/curriculo.js`.
+2. Atualize os dados desejados (nome, idade, projetos, cursos, experiências, contatos).
+3. Se precisar trocar imagens, substitua em `public/Images/` mantendo o nome igual.
+4. Salve → tudo reflete no site automaticamente.
+
+---
+
+## 📌 Autor
+
+👨‍💻 **Matheus Fernando Ribeiro Martins**
+🔗 [GitHub](https://github.com/Matheus-Fernando-br)
+🔗 [LinkedIn](https://www.linkedin.com/in/matheus-fernando-)
+
+---

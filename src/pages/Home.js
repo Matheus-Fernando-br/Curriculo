@@ -1,48 +1,37 @@
 import React from "react";
 import Sidebar from "../components/Sidebar";
 import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
-  LineChart, Line, CartesianGrid
+BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
+LineChart, Line, CartesianGrid
 } from "recharts";
-import projetos from "../data/projetos";
+import curriculo from "../editar/curriculo";
 
 function Home() {
-  // Dados para gráficos
-  const habilidades = [
-    { name: "JavaScript", nivel: 85 },
-    { name: "React", nivel: 65 },
-    { name: "Node.js", nivel: 60 },
-    { name: "HTML", nivel: 90 },
-    { name: "CSS", nivel: 80 },
-    { name: "Git/GitHub", nivel: 70 },
-  ];
+  const dados = curriculo();
 
   const experiencia = [
-    { ano: "2021", conquistas: 1 },
-    { ano: "2022", conquistas: 1.5 },
-    { ano: "2023", conquistas: 3 },
-    { ano: "2024", conquistas: 6 },
-    { ano: "2025", conquistas: 9 },
+  { ano: "2021", conquistas: 1 },
+  { ano: "2022", conquistas: 1.5 },
+  { ano: "2023", conquistas: 3 },
+  { ano: "2024", conquistas: 6 },
+  { ano: "2025", conquistas: 9 },
   ];
-  
-  return (
-    <main className="Content page-home">
-      <section className="cards">
-        {/* Sidebar */}
-        <section className="lado-esquerdo">
-          <Sidebar />
+
+  return ( 
+    <main className="Content page-home"> 
+      <section className="cards"> 
+        <section className="lado-esquerdo"> 
+          <Sidebar /> 
         </section>
 
-        {/* Conteúdo Principal */}
         <section className="lado-direito">
           <h2><i className="bi bi-house-door"></i> Bem-vindo!</h2>
-          <p>Aqui você pode conhecer um pouco mais sobre minha trajetória, minhas habilidades e projetos.</p>
+          <p>{dados.textoInicialHome}</p>
 
-          {/* Gráfico de Habilidades */}
           <div className="grafico-container">
             <h3>Minhas Habilidades</h3>
             <ResponsiveContainer width="100%" height={250}>
-              <BarChart data={habilidades}>
+              <BarChart data={dados.habilidades}>
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
@@ -51,7 +40,6 @@ function Home() {
             </ResponsiveContainer>
           </div>
 
-          {/* Gráfico de Experiência */}
           <div className="grafico-container">
             <h3>Evolução Profissional</h3>
             <ResponsiveContainer width="100%" height={250}>
@@ -65,11 +53,10 @@ function Home() {
             </ResponsiveContainer>
           </div>
 
-          {/* Projetos em Destaque */}
-           <div className="destaques">
+          <div className="destaques">
             <h3>Projetos em Destaque</h3>
             <div className="projetos-grid">
-              {projetos.slice(0, 3).map((p, index) => (
+              {dados.projetos.slice(0, 3).map((p, index) => (
                 <a key={index} href={p.link} target="blank" className="projeto-card">
                   <i className={`bi ${p.icon}`}></i> {p.title}
                 </a>
@@ -77,25 +64,30 @@ function Home() {
             </div>
           </div>
 
-          {/* Testemunhos */}
           <div className="testemunhos">
             <h3>O que dizem sobre mim</h3>
-            <blockquote><span className="Cor-Primaria">"</span> Profissional dedicado e sempre pronto para aprender! <span className="Cor-Primaria">"</span> – Funcionários NM Engenharia</blockquote>
-            <blockquote><span className="Cor-Primaria">"</span> Entrega sempre no prazo e com qualidade. <span className="Cor-Primaria">"</span> – Funcionários Cenibra</blockquote>
+            {dados.oqueDizemSobreMim.map((texto, index) => (
+              <blockquote key={index}>
+                <span className="Cor-Primaria">"</span> {texto} <span className="Cor-Primaria">"</span>
+              </blockquote>
+            ))}
           </div>
 
-          {/* Estatísticas */}
           <div className="estatisticas">
             <h3>Minhas Conquistas</h3>
             <div className="estatisticas-grid">
-              <div><strong>1</strong><p>Projeto concluído</p></div>
-              <div><strong>2</strong><p>Anos de experiência</p></div>
-              <div><strong>3</strong><p>Certificações</p></div>
+              {dados.minhasConquistas.map((c, index) => (
+                <div key={index}>
+                  <strong>{c.numero}</strong>
+                  <p>{c.descricao}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
       </section>
     </main>
+
   );
 }
 

@@ -313,6 +313,22 @@ nav ul li a:hover {
   line-height: 1.4;
 }
 
+.card-content ul {
+  padding-left: 1rem;
+  line-height: 1.5;
+}
+
+.card-header-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* espaço entre ícone e título */
+}
+
+.card-header-inline i {
+  color: var(--primary-color);
+}
+
+
 /*Linhas*/
 /* Linha só nos cards de info pessoal */
 .top-section .info-pessoal .card, .educacao .card, .bottom-section.full .card {
