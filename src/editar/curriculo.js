@@ -32,6 +32,7 @@ function curriculo() {
       { name: "JavaScript", nivel: 85 },
       { name: "React", nivel: 65 },
       { name: "Node.js", nivel: 60 },
+      { name: "Python", nivel: 50 },
       { name: "HTML", nivel: 90 },
       { name: "CSS", nivel: 80 },
       { name: "Git/GitHub", nivel: 70 },
@@ -103,6 +104,18 @@ function curriculo() {
         details: "Sistema completo para emissão de notas fiscais eletrônicas (NFe).",
       },
       {
+        title: "Simple Mario Jump Game",
+        link: "https://mario-game-plum.vercel.app",
+        icon: "bi-laptop",
+        details: "Jogo simples do Mario feito em Java com Swing.",
+      },
+      {
+        title: "Gerador de Currículo Onlinne",
+        link: "https://geradorcurriculoonline.vercel.app",
+        icon: "bi-file-earmark-break",
+        details: "Sistema gratuito que gera um currículo formatado.",
+      },
+      {
         title: "Reserva de Restaurante em JAVA",
         link: "https://github.com/Matheus-Fernando-br/Reserva-Restaurante",
         icon: "bi-laptop",
@@ -113,12 +126,6 @@ function curriculo() {
         link: "https://github.com/Matheus-Fernando-br/Simple-Calculator-Project",
         icon: "bi-laptop",
         details: "Calculadora simples feita em Java com Swing.",
-      },
-      {
-        title: "Simple Mario Jump Game",
-        link: "https://github.com/Matheus-Fernando-br/Mario-Game",
-        icon: "bi-laptop",
-        details: "Jogo simples do Mario feito em Java com Swing.",
       },
     ],
 
