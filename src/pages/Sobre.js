@@ -16,7 +16,7 @@ function Sobre() {
           {/* Sobre Mim */}
           <div className="top-section">
             <div className="sobre-mim">
-              <h2><i className="bi bi-person"></i> Sobre <span className="Cor-Primaria">Mim</span></h2>
+              <h2><i className="bi bi-person"></i> About <span className="Cor-Primaria">Me</span></h2>
               <p>{dados.textoSobreMim}</p>
             </div>
 
@@ -25,28 +25,28 @@ function Sobre() {
               <div className="card">
                 <div className="card-header-inline">
                   <i className="bi bi-calendar"></i>
-                  <h4>Idade</h4>
+                  <h4>Age</h4>
                 </div>
-                <p>{dados.idade} anos</p>
+                <p>{dados.idade} years</p>
               </div>
               <div className="card">
                 <div className="card-header-inline">
                   <i className="bi bi-car-front"></i>
-                  <h4>CNH</h4>
+                  <h4>Driver's License</h4>
                 </div>
                 <p>{dados.cnh}</p>
               </div>
               <div className="card">
                 <div className="card-header-inline">
                   <i className="bi bi-translate"></i>
-                  <h4>Idioma</h4>
+                  <h4>Language</h4>
                 </div>
                 <p>{dados.idioma}</p>
               </div>
               <div className="card">
                 <div className="card-header-inline">
                   <i className="bi bi-geo-alt"></i>
-                  <h4>Região</h4>
+                  <h4>Region</h4>
                 </div>
                 <p>{dados.regiao}</p>
               </div>
@@ -57,7 +57,7 @@ function Sobre() {
           <div className="bottom-section">
             {/* Projetos */}
             <div className="projetos">
-              <h2><i className="bi bi-diagram-3"></i> Projetos</h2>
+              <h2><i className="bi bi-diagram-3"></i> Projects</h2>
               {dados.projetos.map((p, index) => (
                 <a key={index} href={p.link} target="blank" className="card">
                   <div className="card-header-inline">
@@ -71,7 +71,7 @@ function Sobre() {
 
             {/* Cursos */}
             <div className="cursos">
-              <h2><i className="bi bi-award"></i> Cursos</h2>
+              <h2><i className="bi bi-award"></i> Courses</h2>
               {dados.cursos.map((curso, index) => (
                 <div key={index} className="card">
                   <div className="card-header-inline">

@@ -14,12 +14,12 @@ function Resumo() {
 
         <section className="lado-direito">
           <div className="lado-direito-scroll">
-            <h2><i className="bi bi-journal-text"></i> Resumo</h2>
+            <h2><i className="bi bi-journal-text"></i> Summary</h2>
 
             {/* Educação */}
             <div className="top-section">
               <div className="educacao">
-                <h3><i className="bi bi-mortarboard"></i> Educação</h3>
+                <h3><i className="bi bi-mortarboard"></i> Academic Training</h3>
                 {dados.educacao.map((edu, index) => (
                   <div key={index} className="card">
                     <div className="card-header">

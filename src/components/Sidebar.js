@@ -27,7 +27,7 @@ function Sidebar() {
           target="_blank" 
           rel="noopener noreferrer"
         >
-          📄 Baixar Currículo
+          📄 Download Resume
         </a>
 
 

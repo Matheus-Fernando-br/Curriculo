@@ -13,13 +13,13 @@ function Contato() {
         </section>
 
           <section className="lado-direito">
-            <h2><i className="bi bi-envelope"></i> Contato</h2>
-            <p>Entre em contato através de qualquer um dos canais abaixo:</p>
+            <h2><i className="bi bi-envelope"></i> Contacts</h2>
+            <p>Contact us through any of the channels below:</p>
 
             <div className="contact-area">
               <ul>
                 <a href={`tel:${dados.contatos.telefone}`}>
-                  <li><i className="bi bi-telephone"></i> Telefone</li>
+                  <li><i className="bi bi-telephone"></i> Phone</li>
                 </a>
                 <a href={`mailto:${dados.contatos.email}`}>
                   <li><i className="bi bi-envelope"></i> {dados.contatos.email}</li>

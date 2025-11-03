@@ -1,13 +1,12 @@
-
 // src/editar/curriculo.js
 /* 
-Arquivo único de edição: altere apenas aqui e todo o site será atualizado.
-Bem dividido em seções para fácil manutenção.
+Single edit file: make changes only here and the entire site will be updated.
+Well divided into sections for easy maintenance.
 */
 
 function curriculo() {
   return {
-    // ------------------ INFORMAÇÕES PESSOAIS ------------------
+    // ------------------ PERSONAL INFORMATION ------------------
     nome: "Matheus Fernando Ribeiro Martins",
     apelido: "Matheus Fernando",
     dataNascimento: "27-08-2004",
@@ -15,19 +14,20 @@ function curriculo() {
     cidade: "Minas Gerais",
     estado: "MG",
     regiao: "Timóteo - MG",
-    cargo: "Analista de TI",
+    cargo: "IT Analyst",
     cnh: "AB",
-    idioma: "Inglês - Básico",
+    idioma: "English - Basic",
 
-    // ------------------ TEXTOS ------------------
-    textoInicialHome: "Aqui você pode conhecer um pouco mais sobre minha trajetória, minhas habilidades e projetos.",
-    textoSobreMim: `Sou Analista de TI e também atuo como freelancer em projetos de tecnologia. 
-    Tenho experiência em suporte técnico, manutenção de equipamentos, otimização de sistemas 
-    e atendimento interno, sempre buscando soluções práticas e eficientes. 
-    🚀 Vamos conversar? Tenho certeza de que minhas habilidades podem contribuir 
-    para o sucesso do seu projeto ou empresa.`,
+    // ------------------ TEXTS ------------------
+    textoInicialHome:
+      "Here you can learn more about my background, skills, and projects.",
+    textoSobreMim: `I am an IT Analyst and also work as a freelancer on technology projects. 
+    I have experience in technical support, equipment maintenance, system optimization, 
+    and internal assistance, always seeking practical and efficient solutions. 
+    🚀 Shall we talk? I’m confident that my skills can contribute 
+    to the success of your project or company.`,
 
-    // ------------------ HABILIDADES ------------------
+    // ------------------ SKILLS ------------------
     habilidades: [
       { name: "JavaScript", nivel: 85 },
       { name: "React", nivel: 65 },
@@ -38,48 +38,56 @@ function curriculo() {
       { name: "Git/GitHub", nivel: 70 },
     ],
 
-    // ------------------ EXPERIÊNCIA PROFISSIONAL ------------------
+    // ------------------ PROFESSIONAL EXPERIENCE ------------------
     experiencia: [
       {
         empresa: "Colégio Genoma",
-        periodo: "Jul/2025 – Atual",
+        periodo: "Jul/2025 – Present",
         descricao: [
-          "Expertise em infraestrutura de rede robusta (LAN/WLAN) e administração de sistemas escaláveis.",
-          "Proficiente em troubleshooting avançado e otimização de performance de hardware/software.",
-          "Habilidade em operar e manter sistemas audiovisuais complexos (som, iluminação, projeção).",
-          "Identificação de oportunidades de melhoria contínua de processos para eficiência operacional e pedagógica.",
+          "Expertise in robust network infrastructure (LAN/WLAN) and scalable systems administration.",
+          "Proficient in advanced troubleshooting and hardware/software performance optimization.",
+          "Skilled in operating and maintaining complex audiovisual systems (sound, lighting, projection).",
+          "Identifying continuous process improvement opportunities for operational and educational efficiency.",
         ],
       },
       {
         empresa: "NM Engenharia",
-        periodo: "Fev/2024 – Jul/2025",
+        periodo: "Feb/2024 – Jul/2025",
         descricao: [
-          "Experiência em Business Intelligence (BI), relatórios e análise de dados.",
-          "Administração de sistemas: instalação, atualização e resolução de incidentes críticos.",
-          "Manutenção de hardware e software, garantindo alta performance.",
-          "Suporte técnico corporativo eficiente.",
+          "Experience in Business Intelligence (BI), reporting, and data analysis.",
+          "Systems administration: installation, updates, and resolution of critical incidents.",
+          "Hardware and software maintenance ensuring high performance.",
+          "Efficient corporate technical support.",
         ],
       },
       {
         empresa: "CENIBRA - Celulose Nipo Brasileira",
-        periodo: "Jul/2023 – Dez/2023",
+        periodo: "Jul/2023 – Dec/2023",
         descricao: [
-          "Participação em reuniões de planejamento semanal e relatórios preventivos.",
-          "Fiscalização de pintura industrial e medições em peças jateadas.",
-          "Conhecimento em isolamento térmico, montagem e desmontagem.",
+          "Participation in weekly planning meetings and preventive reports.",
+          "Supervision of industrial painting and measurements on blasted parts.",
+          "Knowledge in thermal insulation, assembly, and disassembly.",
         ],
       },
     ],
 
-    // ------------------ EDUCAÇÃO ------------------
+    // ------------------ EDUCATION ------------------
     educacao: [
-      { instituicao: "Unileste", periodo: "2024 – 2027 (Cursando)", curso: "Engenharia de Software" },
-      { instituicao: "CEFET-MG", periodo: "2022 – 2023", curso: "Técnico em Edificações" },
+      {
+        instituicao: "Unileste",
+        periodo: "2024 – 2027 (In progress)",
+        curso: "Software Engineering",
+      },
+      {
+        instituicao: "CEFET-MG",
+        periodo: "2022 – 2023",
+        curso: "Technical Degree in Building Construction",
+      },
     ],
 
-    // ------------------ COMPETÊNCIAS ------------------
+    // ------------------ COMPETENCIES ------------------
     competencias: [
-      { nome: "ANÁLISE DE DADOS", icon: "bi-bar-chart-line" },
+      { nome: "DATA ANALYSIS", icon: "bi-bar-chart-line" },
       { nome: "JAVA", icon: "bi-cup-hot" },
       { nome: "JAVASCRIPT", icon: "bi-braces" },
       { nome: "REACT", icon: "bi-lightbulb" },
@@ -88,68 +96,72 @@ function curriculo() {
       { nome: "CSS", icon: "bi-filetype-css" },
       { nome: "PYTHON", icon: "bi-filetype-py" },
       { nome: "MYSQL", icon: "bi-database" },
-      { nome: "GIT E GITHUB", icon: "bi-git" },
-      { nome: "REDES", icon: "bi-hdd-network" },
-      { nome: "PACOTE OFFICE", icon: "bi-microsoft" },
-      { nome: "E-FORNECEDORES", icon: "bi-cart-check" },
+      { nome: "GIT & GITHUB", icon: "bi-git" },
+      { nome: "NETWORKING", icon: "bi-hdd-network" },
+      { nome: "MICROSOFT OFFICE", icon: "bi-microsoft" },
+      { nome: "E-SUPPLIERS", icon: "bi-cart-check" },
       { nome: "SAP", icon: "bi-building" },
     ],
 
-    // ------------------ PROJETOS ------------------
+    // ------------------ PROJECTS ------------------
     projetos: [
       {
-        title: "Site de Emissão de Nota Fiscal em REACT",
+        title: "Invoice Issuing Website in REACT",
         link: "https://finc-seven.vercel.app/",
         icon: "bi-code-slash",
-        details: "Sistema completo para emissão de notas fiscais eletrônicas (NFe).",
+        details: "Complete system for issuing electronic invoices (NFe).",
       },
       {
         title: "Simple Mario Jump Game",
         link: "https://mario-game-plum.vercel.app",
         icon: "bi-laptop",
-        details: "Jogo simples do Mario feito em Java com Swing.",
+        details: "Simple Mario game built in Java with Swing.",
       },
       {
-        title: "Gerador de Currículo Onlinne",
+        title: "Online Resume Generator",
         link: "https://geradorcurriculoonline.vercel.app",
         icon: "bi-file-earmark-break",
-        details: "Sistema gratuito que gera um currículo formatado.",
+        details: "Free system that generates a formatted resume.",
       },
       {
-        title: "Reserva de Restaurante em JAVA",
+        title: "Restaurant Reservation System in JAVA",
         link: "https://github.com/Matheus-Fernando-br/Reserva-Restaurante",
         icon: "bi-laptop",
-        details: "Sistema desktop para reservas de restaurante com Swing.",
+        details: "Desktop system for restaurant reservations built with Swing.",
       },
       {
         title: "Simple Calculator Project",
         link: "https://github.com/Matheus-Fernando-br/Simple-Calculator-Project",
         icon: "bi-laptop",
-        details: "Calculadora simples feita em Java com Swing.",
+        details: "Simple calculator built in Java using Swing.",
       },
     ],
 
-    // ------------------ CURSOS ------------------
+    // ------------------ COURSES ------------------
     cursos: [
-      { icon: "bi-mortarboard", title: "FIGMA", text: "TIC em trilhas" },
-      { icon: "bi-book", title: "Liderança: como desenvolver times de alta performance", text: "SEBRAE" },
-      { icon: "bi-book", title: "Python do zero ao avançado", text: "Udemy" },
+      { icon: "bi-mortarboard", title: "FIGMA", text: "TIC learning path" },
+      {
+        icon: "bi-book",
+        title: "Leadership: How to Develop High-Performance Teams",
+        text: "SEBRAE",
+      },
+      { icon: "bi-book", title: "Python From Zero to Advanced", text: "Udemy" },
     ],
 
-    // ------------------ TESTEMUNHOS ------------------
+    // ------------------ TESTIMONIALS ------------------
     oqueDizemSobreMim: [
-      `"Profissional dedicado e sempre pronto para aprender!" – Funcionários NM Engenharia`,
-      `"Entrega sempre no prazo e com qualidade." – Funcionários Cenibra`,
+      `A dedicated professional always eager to learn!" – NM Engenharia Staff`,
+      `Always delivers on time and with quality." – CENIBRA Staff`,
     ],
 
-    // ------------------ CONQUISTAS ------------------
+    // ------------------ ACHIEVEMENTS ------------------
     minhasConquistas: [
-      { numero: 1, descricao: "Projeto concluído" },
-      { numero: 2, descricao: "Anos de experiência" },
-      { numero: 3, descricao: "Certificações" },
+      { numero: 1, descricao: "Project Completed" },
+      { numero: 2, descricao: "Years of Experience" },
+      { numero: 3, descricao: "Certifications" },
     ],
 
-    // ------------------ CONTATOS ------------------
+    // ------------------ CONTACTS ------------------
     contatos: {
       telefone: "31986763652",
       whatsapp: "31986763652",

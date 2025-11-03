@@ -25,11 +25,11 @@ function Home() {
         </section>
 
         <section className="lado-direito">
-          <h2><i className="bi bi-house-door"></i> Bem-vindo!</h2>
+          <h2><i className="bi bi-house-door"></i> Welcome to my profile!</h2>
           <p>{dados.textoInicialHome}</p>
 
           <div className="grafico-container">
-            <h3>Minhas Habilidades</h3>
+            <h3>My Hard Skills</h3>
             <ResponsiveContainer width="100%" height={250}>
               <BarChart data={dados.habilidades}>
                 <XAxis dataKey="name" />
@@ -41,7 +41,7 @@ function Home() {
           </div>
 
           <div className="grafico-container">
-            <h3>Evolução Profissional</h3>
+            <h3>Professional Evolution</h3>
             <ResponsiveContainer width="100%" height={250}>
               <LineChart data={experiencia}>
                 <CartesianGrid strokeDasharray="3 3" />
@@ -54,7 +54,7 @@ function Home() {
           </div>
 
           <div className="destaques">
-            <h3>Projetos em Destaque</h3>
+            <h3>Featured Projects</h3>
             <div className="projetos-grid">
               {dados.projetos.slice(0, 3).map((p, index) => (
                 <a key={index} href={p.link} target="blank" className="projeto-card">
@@ -65,7 +65,7 @@ function Home() {
           </div>
 
           <div className="testemunhos">
-            <h3>O que dizem sobre mim</h3>
+            <h3>What they say about me</h3>
             {dados.oqueDizemSobreMim.map((texto, index) => (
               <blockquote key={index}>
                 <span className="Cor-Primaria">"</span> {texto} <span className="Cor-Primaria">"</span>
@@ -74,7 +74,7 @@ function Home() {
           </div>
 
           <div className="estatisticas">
-            <h3>Minhas Conquistas</h3>
+            <h3>My achievements</h3>
             <div className="estatisticas-grid">
               {dados.minhasConquistas.map((c, index) => (
                 <div key={index}>
