@@ -36,7 +36,7 @@ function Resumo() {
 
               {/* Competências */}
               <div className="competencias">
-                <h3><i className="bi bi-lightning-charge"></i> Competências</h3>
+                <h3><i className="bi bi-lightning-charge"></i> Hard Skills</h3>
                 <div className="competencias-tags">
                   {dados.competencias.map((comp, index) => (
                     <span key={index} className="tag">
@@ -49,7 +49,7 @@ function Resumo() {
 
             {/* Experiências */}
             <div className="bottom-section full">
-              <h3><i className="bi bi-briefcase"></i> Experiências</h3>
+              <h3><i className="bi bi-briefcase"></i> Professional Experiences</h3>
               {dados.experiencia.map((exp, index) => (
                 <div key={index} className="card experiencia-card">
                   <div className="card-header">
