@@ -29,8 +29,8 @@ function Header() {
   const { lang, toggleLang } = useContext(LangContext);
 
   const t = {
-    pt: { home: "Início", about: "Sobre", resume: "Resumo", contact: "Contato" },
-    en: { home: "Home", about: "About", resume: "Summary", contact: "Contact" }
+    pt: { home: "Início", about: "Sobre Mim", resume: "Resumo", projects: "Projetos", contact: "Contato" },
+    en: { home: "Home", about: "About Me", resume: "Summary", projects: "Projects", contact: "Contact" }
   };
 
   const menuRef = useRef(null);
@@ -87,6 +87,11 @@ function Header() {
           <li className={isActive("/resumo") ? "active" : ""}>
             <Link to="/resumo" onClick={() => setMenuOpen(false)}>
               {t[lang].resume}
+            </Link>
+          </li>
+          <li className={isActive("/projeto") ? "active" : ""}>
+            <Link to="/projeto" onClick={() => setMenuOpen(false)}>
+              {t[lang].projects}
             </Link>
           </li>
           <li className={isActive("/contato") ? "active" : ""}>

@@ -1,86 +1,104 @@
-import React from "react";
-import Sidebar from "../components/Sidebar";
+import React, { useContext } from "react";
 import curriculo from "../editar/curriculo";
+import { LangContext } from "../context/LangContext";
 
 function Sobre() {
   const dados = curriculo();
+  const { lang } = useContext(LangContext);
 
-  return ( 
-    <main className="Content page-sobre"> 
-      <section className="cards"> 
+  const t = {
+    pt: {
+      aboutTitle: "Sobre Mim",
+      achievements: "Minhas Conquistas",
+      idade: "Idade",
+      cnh: "CNH",
+      idioma: "Idioma",
+      regiao: "Região",
+    },
+    en: {
+      aboutTitle: "About Me",
+      achievements: "My Achievements",
+      idade: "Age",
+      cnh: "Driver's License",
+      idioma: "Language",
+      regiao: "Region",
+    },
+  };
 
-        <section className="lado-direito">
-          {/* Sobre Mim */}
-          <div className="top-section">
-            <div className="sobre-mim">
-              <h2><i className="bi bi-person"></i> About <span className="Cor-Primaria">Me</span></h2>
-              <p>{dados.textoSobreMim}</p>
-            </div>
+  return (
+    <main id="scroll-container" className="Content page-sobre">
+      <section className="cards">
 
-            {/* Informações Pessoais */}
-            <div className="info-pessoal">
-              <div className="card">
-                <div className="card-header-inline">
-                  <i className="bi bi-calendar"></i>
-                  <h4>Age</h4>
-                </div>
-                <p>{dados.idade} years</p>
+        {/* ===== PRIMEIRA SEÇÃO ===== */}
+        <div className="sobre-top">
+
+          {/* ESQUERDA */}
+          <div className="sobre-texto">
+            <h2>
+             <h1><i className="bi bi-person"></i> {t[lang].aboutTitle}</h1>
+            </h2>
+            <p dangerouslySetInnerHTML={{ __html: dados.textoSobreMim }} />
+
+          </div>
+
+          {/* DIREITA */}
+          <div className="sobre-info">
+            <img
+              src="/Images/Foto-2-Usuario.JPG"
+              alt="Foto de Perfil"
+              className="sobre-foto"
+            />
+
+            <div className="info-grid">
+              <div className="info-card">
+                <h4><i className="bi bi-calendar"></i> {t[lang].idade}</h4>
+                <span>{dados.idade} years</span>
               </div>
-              <div className="card">
-                <div className="card-header-inline">
-                  <i className="bi bi-car-front"></i>
-                  <h4>Driver's License</h4>
-                </div>
-                <p>{dados.cnh}</p>
+              <div className="info-card">
+                <h4><i className="bi bi-car-front"></i> {t[lang].cnh}</h4>
+                <span>{dados.cnh}</span>
               </div>
-              <div className="card">
-                <div className="card-header-inline">
-                  <i className="bi bi-translate"></i>
-                  <h4>Language</h4>
-                </div>
-                <p>{dados.idioma}</p>
+              <div className="info-card">
+                <h4><i className="bi bi-translate"></i> {t[lang].idioma}</h4>
+                <span>{dados.idioma}</span>
               </div>
-              <div className="card">
-                <div className="card-header-inline">
-                  <i className="bi bi-geo-alt"></i>
-                  <h4>Region</h4>
-                </div>
-                <p>{dados.regiao}</p>
+              <div className="info-card">
+                <h4><i className="bi bi-geo-alt"></i> {t[lang].regiao}</h4>
+                <span>{dados.regiao}</span>
               </div>
             </div>
           </div>
 
-          {/* Projetos e Cursos */}
-          <div className="bottom-section">
-            {/* Projetos */}
-            <div className="projetos">
-              <h2><i className="bi bi-diagram-3"></i> Projects</h2>
-              {dados.projetos.map((p, index) => (
-                <a key={index} href={p.link} target="blank" className="card">
-                  <div className="card-header-inline">
-                    <i className={`bi ${p.icon}`}></i>
-                    <h4>{p.title}</h4>
-                  </div>
-                  <p>{p.details}</p>
-                </a>
-              ))}
-            </div>
+        </div>
 
-            {/* Cursos */}
-            <div className="cursos">
-              <h2><i className="bi bi-award"></i> Courses</h2>
-              {dados.cursos.map((curso, index) => (
-                <div key={index} className="card">
-                  <div className="card-header-inline">
-                    <i className={`bi ${curso.icon}`}></i>
-                    <h4>{curso.title}</h4>
-                  </div>
-                  <p>{curso.text}</p>
-                </div>
-              ))}
-            </div>
+        {/* ===== HARD SKILLS ===== */}
+        <div className="competencias">
+          <h3>
+            <i className="bi bi-lightning-charge"></i> Hard Skills
+          </h3>
+
+          <div className="competencias-tags">
+            {dados.competencias.map((comp, index) => (
+              <span key={index} className="tag">
+                <i className={`bi ${comp.icon}`}></i> {comp.nome}
+              </span>
+            ))}
           </div>
-        </section>
+        </div>
+
+        {/* ===== ESTATÍSTICAS ===== */}
+        <div className="estatisticas">
+          <h3><i class="bi bi-trophy-fill"></i> {t[lang].achievements}</h3>
+          <div className="estatisticas-grid">
+            {dados.minhasConquistas.map((c, index) => (
+              <div key={index} className="estat-card">
+                <strong>{c.numero}</strong>
+                <p>{c.descricao}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </section>
     </main>
   );

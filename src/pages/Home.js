@@ -21,6 +21,9 @@ function Home({ darkMode = true }) {
       achievements: "Minhas Conquistas",
       curriculoDownloadPT: "Baixar Currículo em PT-BR",
       curriculoDownloadEN: "Baixar Currículo em EN-US",
+      titleFinal: "Pronto para colaborar?",
+      msgFinal: "Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para fazer parte de sua visão.",
+      btnFinal: "Entre em Contato",
     },
     en: {
       homeTitle: "Welcome to my profile!",
@@ -31,6 +34,9 @@ function Home({ darkMode = true }) {
       achievements: "My achievements",
       curriculoDownloadPT: "Download Resume in PT-BR",
       curriculoDownloadEN: "Download Resume in EN-US",
+      titleFinal: "Ready to collaborate?",
+      msgFinal: "I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+      btnFinal: "Contact Me",
     }
   };
 
@@ -136,16 +142,12 @@ function Home({ darkMode = true }) {
           ))}
         </div>
 
-        <div className="estatisticas">
-          <h3>{t[lang].achievements}</h3>
-          <div className="estatisticas-grid">
-            {dados.minhasConquistas.map((c, index) => (
-              <div key={index}>
-                <strong>{c.numero}</strong>
-                <p>{c.descricao}</p>
-              </div>
-            ))}
-          </div>
+        <div className="espaco-final">
+          <h2>{t[lang].titleFinal}</h2>
+          <p>{t[lang].msgFinal}</p>
+          <button onClick={() => window.location.href = '/contato'}>
+            <i className="bi bi-envelope"></i> {t[lang].btnFinal}
+          </button>
         </div>
       </section>
     </main>

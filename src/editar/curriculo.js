@@ -16,11 +16,16 @@ function curriculo() {
     // ------------------ TEXTOS ------------------
     textoInicialHome:
       "Aqui você pode conhecer mais sobre minha formação, habilidades e projetos.",
-    textoSobreMim: `Sou Analista de TI e também trabalho como freelancer em projetos de tecnologia. 
-Tenho experiência em suporte técnico, manutenção de equipamentos, otimização de sistemas, 
-e assistência interna, sempre buscando soluções práticas e eficientes. 
-🚀 Vamos conversar? Tenho confiança de que minhas habilidades podem contribuir 
-para o sucesso do seu projeto ou empresa.`,
+    textoSobreMim: `Sou Analista de TI e atuo profissionalmente na empresa Genoma / Colégio Genoma, além de trabalhar como freelancer em projetos de tecnologia
+    . Meu interesse pela área de tecnologia despertou ainda na adolescência, motivado pela curiosidade em entender como sistemas, equipamentos e soluções digitais funcionam e como podem facilitar a vida das pessoas.<br><br>
+
+Atualmente, curso Engenharia de Software pela UniLeste, buscando fortalecer minha formação acadêmica e técnica.<br><br>
+
+A cada dia procuro evoluir, adquirir novos conhecimentos e desenvolver habilidades que me permitam contribuir de forma significativa para a área de tecnologia.<br><br>
+
+
+Sou movido por aprendizado contínuo, desafios e pela busca constante por excelência no que faço.
+`,
 
     // ------------------ HABILIDADES ------------------
     habilidades: [
@@ -159,6 +164,7 @@ para o sucesso do seu projeto ou empresa.`,
       email: "matheus1030br@gmail.com",
       linkedin: "https://www.linkedin.com/in/matheus-ribeiro-7b4a9822b/",
       github: "https://github.com/Matheus-Fernando-br",
+      instagram: "https://www.instagram.com/matheus_marthins_?igsh=MXM0YW1qam5lMm8xeA%3D%3D&utm_source=qr",
       telegram: "https://t.me/+5531986763652",
       curriculo: "../Curriculo.pdf",
     },

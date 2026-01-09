@@ -5,6 +5,7 @@ import BackToTop from "./components/BackToTop";
 import Home from "./pages/Home";
 import Sobre from "./pages/Sobre";
 import Resumo from "./pages/Resumo";
+import Projetos from "./pages/Projeto";
 import Contato from "./pages/Contato";
 import './styles/global.css';
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/resumo" element={<Resumo />} />
+          <Route path="/projeto" element={<Projetos />} />
           <Route path="/contato" element={<Contato />} />
         </Routes>
 
