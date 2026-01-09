@@ -8,9 +8,6 @@ function Sobre() {
   return ( 
     <main className="Content page-sobre"> 
       <section className="cards"> 
-        <section className="lado-esquerdo"> 
-          <Sidebar /> 
-        </section>
 
         <section className="lado-direito">
           {/* Sobre Mim */}

@@ -8,9 +8,6 @@ function Resumo() {
   return ( 
     <main className="Content page-resumo"> 
       <section className="cards"> 
-        <section className="lado-esquerdo"> 
-          <Sidebar /> 
-        </section>
 
         <section className="lado-direito">
           <div className="lado-direito-scroll">

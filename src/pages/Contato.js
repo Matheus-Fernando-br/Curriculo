@@ -8,9 +8,6 @@ function Contato() {
   return ( 
     <main className="Content page-contato"> 
       <section className="cards"> 
-        <section className="lado-esquerdo"> 
-          <Sidebar /> 
-        </section>
 
           <section className="lado-direito">
             <h2><i className="bi bi-envelope"></i> Contacts</h2>

@@ -1,13 +1,13 @@
-import React, { useState, useEffect,useRef } from "react";
+import React, { useState, useEffect,useRef, useContext } from "react";
 import { Link, useLocation } from "react-router-dom";
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import curriculo from "../editar/curriculo";
+import {LangContext} from "../context/LangContext";
 
 function Header() {
   const dados = curriculo();
   const [menuOpen, setMenuOpen] = useState(false);
   const [darkMode, setDarkMode] = useState(true);
-  const [lang, setLang] = useState("pt");
 
   const getNomeInfo = (nome = "") => {
     const partes = nome.trim().split(" ").filter(Boolean);
@@ -26,8 +26,10 @@ function Header() {
     );
   }, [darkMode]);
 
+  const { lang, toggleLang } = useContext(LangContext);
+
   const t = {
-    pt: { home: "Home", about: "Sobre", resume: "Resumo", contact: "Contato" },
+    pt: { home: "Início", about: "Sobre", resume: "Resumo", contact: "Contato" },
     en: { home: "Home", about: "About", resume: "Summary", contact: "Contact" }
   };
 
@@ -61,7 +63,7 @@ function Header() {
 
 
   return (
-    <header className="header">
+    <header className="header" id="scroll-container">
 
       {/* DESKTOP LEFT */}
       <div className="header-left">
@@ -98,7 +100,7 @@ function Header() {
 
       {/* DESKTOP RIGHT */}
       <div className="header-right">
-        <button className="icon-btn" onClick={() => setLang(lang === "pt" ? "en" : "pt")}>
+        <button className="icon-btn" onClick={toggleLang}>
           <i className="bi bi-globe"></i> {lang.toUpperCase()}
         </button>
 
@@ -151,7 +153,7 @@ function Header() {
 
         {/* Botões direito */}
         <div className="header-right">
-          <button className="icon-btn" onClick={() => setLang(lang === "pt" ? "en" : "pt")}>
+          <button className="icon-btn" onClick={toggleLang}>
             <i className="bi bi-globe"></i>
           </button>
 

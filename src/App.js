@@ -1,23 +1,31 @@
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import BackToTop from "./components/BackToTop";
+
 import Home from "./pages/Home";
-import Contato from "./pages/Contato";
 import Sobre from "./pages/Sobre";
 import Resumo from "./pages/Resumo";
-import Header from "./components/Header";
-import "./styles/global.css";
+import Contato from "./pages/Contato";
+import './styles/global.css';
+
+import { LangProvider } from "./context/LangContext";
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/sobre" element={<Sobre />} />
-        <Route path="/resumo" element={<Resumo />} />
-        <Route path="/contato" element={<Contato />} />
-      </Routes>
-    </Router>
+    <LangProvider>
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route path="/resumo" element={<Resumo />} />
+          <Route path="/contato" element={<Contato />} />
+        </Routes>
+
+        {/* BOTÃO GLOBAL */}
+        <BackToTop />
+      </Router>
+    </LangProvider>
   );
 }
 

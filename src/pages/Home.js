@@ -1,12 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
   LineChart, Line, CartesianGrid
 } from "recharts";
 import curriculo from "../editar/curriculo";
+import { LangContext } from "../context/LangContext";
 
-function Home({ darkMode = true, lang = "pt" }) {
+function Home({ darkMode = true }) {
+  const { lang } = useContext(LangContext);
   const dados = curriculo();
+
 
   const t = {
     pt: {
@@ -15,7 +18,9 @@ function Home({ darkMode = true, lang = "pt" }) {
       profEvol: "Evolução Profissional",
       featuredProjects: "Projetos em Destaque",
       testimonials: "O que dizem sobre mim",
-      achievements: "Minhas Conquistas"
+      achievements: "Minhas Conquistas",
+      curriculoDownloadPT: "Baixar Currículo em PT-BR",
+      curriculoDownloadEN: "Baixar Currículo em EN-US",
     },
     en: {
       homeTitle: "Welcome to my profile!",
@@ -23,7 +28,9 @@ function Home({ darkMode = true, lang = "pt" }) {
       profEvol: "Professional Evolution",
       featuredProjects: "Featured Projects",
       testimonials: "What they say about me",
-      achievements: "My achievements"
+      achievements: "My achievements",
+      curriculoDownloadPT: "Download Resume in PT-BR",
+      curriculoDownloadEN: "Download Resume in EN-US",
     }
   };
 
@@ -54,6 +61,24 @@ function Home({ darkMode = true, lang = "pt" }) {
             </h2>
             <h1>{dados.nome}</h1>
             <p>{dados.textoInicialHome}</p>
+            <div className="btns-download">
+              <a 
+                href={dados.contatos.curriculo} 
+                className="btn-download" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-download"></i> {t[lang].curriculoDownloadPT} 
+              </a>
+              <a 
+                href={dados.contatos.curriculo} 
+                className="btn-download curriculo-en" 
+                target="_blank" 
+                rel="noopener noreferrer"
+              >
+                <i className="bi bi-download"></i> {t[lang].curriculoDownloadEN}
+              </a>
+            </div>
           </div>
 
           {/* LADO DIREITO */}
