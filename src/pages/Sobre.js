@@ -80,10 +80,12 @@ function Sobre() {
               </div>
 
               <div className="info-card">
+                <a href={dados.mapa} target="_blank" rel="noreferrer">
                 <h4>
                   <i className="bi bi-geo-alt"></i> {t[lang].regiao}
                 </h4>
                 <span>{dados.regiao[lang]}</span>
+                </a>
               </div>
             </div>
           </div>

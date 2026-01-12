@@ -39,12 +39,14 @@ function Resumo() {
           <div className="grid-cards">
             {dados.educacao.map((edu, index) => (
               <div key={index} className="card">
-                <div className="card-header">
-                  <i className="bi bi-mortarboard"></i>
-                  <h4>{edu.instituicao}</h4>
-                </div>
-                <span className="periodo">{edu.periodo[lang]}</span>
-                <p>{edu.curso[lang]}</p>
+                <a href={edu.link} target="_blank" rel="noreferrer">
+                  <div className="card-header">
+                    <i className="bi bi-mortarboard"></i>
+                    <h4>{edu.instituicao}</h4>
+                  </div>
+                  <span className="periodo">{edu.periodo[lang]}</span>
+                  <p>{edu.curso[lang]}</p>
+                </a>
               </div>
             ))}
           </div>
@@ -59,11 +61,13 @@ function Resumo() {
           <div className="grid-cards">
             {dados.cursos.map((curso, index) => (
               <div key={index} className="card">
+                <a href={curso.link} target="_blank" rel="noreferrer">
                 <div className="card-header-inline">
                   <i className={`bi ${curso.icon}`}></i>
                   <h4>{curso.title[lang]}</h4>
                 </div>
                 <p>{curso.text[lang]}</p>
+                </a>
               </div>
             ))}
           </div>
@@ -78,6 +82,7 @@ function Resumo() {
           <div className="grid-cards">
             {dados.experiencia.map((exp, index) => (
               <div key={index} className="card experiencia-card">
+                <a href={exp.link} target="_blank" rel="noreferrer">
                 <div className="card-header">
                   <i className="bi bi-building"></i>
                   <h4>{exp.empresa}</h4>
@@ -88,6 +93,7 @@ function Resumo() {
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
+                </a>
               </div>
             ))}
           </div>

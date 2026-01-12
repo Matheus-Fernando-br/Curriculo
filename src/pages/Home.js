@@ -68,7 +68,7 @@ function Home({ darkMode = true }) {
 
             <div className="btns-download">
               <a
-                href={dados.contatos.curriculo}
+                href={dados.contatos.curriculoPT}
                 className="btn-download"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -77,7 +77,7 @@ function Home({ darkMode = true }) {
                 {t[lang].curriculoDownloadPT}
               </a>
               <a
-                href={dados.contatos.curriculo}
+                href={dados.contatos.curriculoEN}
                 className="btn-download curriculo-en"
                 target="_blank"
                 rel="noopener noreferrer"

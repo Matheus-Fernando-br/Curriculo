@@ -12,6 +12,7 @@ function curriculo() {
       pt: "Timóteo - MG",
       en: "Timóteo - MG, Brazil",
     },
+    mapa: "https://maps.app.goo.gl/t3nXogCsHYnPRYVFA",
     cargo: {
       pt: "Analista de TI",
       en: "IT Analyst",
@@ -80,6 +81,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
             "Identification of continuous improvement opportunities for operational and educational efficiency.",
           ],
         },
+        link: "https://colegiogenoma.com.br",
       },
       {
         empresa: "NM Engenharia",
@@ -101,6 +103,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
             "Efficient corporate technical support.",
           ],
         },
+        link: "https://nmengenharia.com.br",
       },
       {
         empresa: "CENIBRA - Celulose Nipo Brasileira",
@@ -120,6 +123,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
             "Knowledge of thermal insulation, assembly, and disassembly.",
           ],
         },
+        link: "https://www.cenibra.com.br",
       },
     ],
 
@@ -135,6 +139,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Engenharia de Software",
           en: "Software Engineering",
         },
+        link: "https://www.unileste.catolica.edu.br/portal/curso/engenharia-de-software",
       },
       {
         instituicao: "CEFET-MG",
@@ -146,6 +151,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Curso Técnico em Edificações",
           en: "Technical Course in Construction",
         },
+        link: "https://www.cefetmg.br/cursos/educacao-profissional-e-tecnologica/edificacoes",
       },
     ],
 
@@ -262,6 +268,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         icon: "bi-mortarboard",
         title: { pt: "FIGMA", en: "FIGMA" },
         text: { pt: "Trilha de aprendizagem TIC", en: "ICT learning track" },
+        link: "https://drive.google.com/file/d/17tR9gtGYlh6YXZrpw9oFsmyx8H4RsEAQ/view?usp=sharing",
       },
       {
         icon: "bi-book",
@@ -270,6 +277,16 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           en: "Leadership: How to Develop High-Performance Teams",
         },
         text: { pt: "SEBRAE", en: "SEBRAE" },
+        link: "https://drive.google.com/file/d/1rDPw8Qgs-lFQHzpqmrBx6iSHSnjJNDor/view?usp=sharing",
+      },
+      {
+        icon: "bi-book",
+        title: {
+          pt: "A liderança na gestão de equipes",
+          en: "Leadership in Team Management",
+        },
+        text: { pt: "SEBRAE", en: "SEBRAE" },
+        link: "https://drive.google.com/file/d/1PKdnCw04zL8FdO02iCh_47X5GvYcVefW/view?usp=sharing",
       },
       {
         icon: "bi-book",
@@ -278,6 +295,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           en: "Python from Zero to Advanced",
         },
         text: { pt: "Udemy", en: "Udemy" },
+        link: "https://www.udemy.com/course/programacao-python-do-basico-ao-avancado/?couponCode=UDEAFFHP22025",
       },
     ],
 
@@ -309,7 +327,8 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       github: "https://github.com/Matheus-Fernando-br",
       instagram: "https://www.instagram.com/matheus_marthins_",
       telegram: "https://t.me/+5531986763652",
-      curriculo: "../Curriculo.pdf",
+      curriculoPT: "../CurriculoPT.pdf",
+      curriculoEN: "../CurriculoEN.pdf",
     },
   };
 }
