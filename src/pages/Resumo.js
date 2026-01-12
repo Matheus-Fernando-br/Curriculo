@@ -10,14 +10,12 @@ function Resumo() {
     pt: {
       title: "Resumo",
       education: "Formação Acadêmica",
-      projects: "Projetos",
       courses: "Cursos",
       experience: "Experiências Profissionais",
     },
     en: {
       title: "Summary",
       education: "Academic Training",
-      projects: "Projects",
       courses: "Courses",
       experience: "Professional Experience",
     },
@@ -26,7 +24,6 @@ function Resumo() {
   return (
     <main className="Content page-resumo">
       <section className="cards resumo-container">
-
         <header className="resumo-header">
           <h1 className="Title-Pag">
             <i className="bi bi-journal-text"></i> {t[lang].title}
@@ -35,7 +32,9 @@ function Resumo() {
 
         {/* EDUCAÇÃO */}
         <section className="resumo-section">
-          <h3><i className="bi bi-mortarboard"></i> {t[lang].education}</h3>
+          <h3>
+            <i className="bi bi-mortarboard"></i> {t[lang].education}
+          </h3>
 
           <div className="grid-cards">
             {dados.educacao.map((edu, index) => (
@@ -44,8 +43,8 @@ function Resumo() {
                   <i className="bi bi-mortarboard"></i>
                   <h4>{edu.instituicao}</h4>
                 </div>
-                <span className="periodo">{edu.periodo}</span>
-                <p>{edu.curso}</p>
+                <span className="periodo">{edu.periodo[lang]}</span>
+                <p>{edu.curso[lang]}</p>
               </div>
             ))}
           </div>
@@ -53,16 +52,18 @@ function Resumo() {
 
         {/* CURSOS */}
         <section className="resumo-section">
-          <h3><i className="bi bi-award"></i> {t[lang].courses}</h3>
+          <h3>
+            <i className="bi bi-award"></i> {t[lang].courses}
+          </h3>
 
           <div className="grid-cards">
             {dados.cursos.map((curso, index) => (
               <div key={index} className="card">
                 <div className="card-header-inline">
                   <i className={`bi ${curso.icon}`}></i>
-                  <h4>{curso.title}</h4>
+                  <h4>{curso.title[lang]}</h4>
                 </div>
-                <p>{curso.text}</p>
+                <p>{curso.text[lang]}</p>
               </div>
             ))}
           </div>
@@ -70,7 +71,9 @@ function Resumo() {
 
         {/* EXPERIÊNCIA */}
         <section className="resumo-section">
-          <h3><i className="bi bi-briefcase"></i> {t[lang].experience}</h3>
+          <h3>
+            <i className="bi bi-briefcase"></i> {t[lang].experience}
+          </h3>
 
           <div className="grid-cards">
             {dados.experiencia.map((exp, index) => (
@@ -79,9 +82,9 @@ function Resumo() {
                   <i className="bi bi-building"></i>
                   <h4>{exp.empresa}</h4>
                 </div>
-                <span className="periodo">{exp.periodo}</span>
+                <span className="periodo">{exp.periodo[lang]}</span>
                 <ul>
-                  {exp.descricao.map((item, i) => (
+                  {exp.descricao[lang].map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
                 </ul>
@@ -89,7 +92,6 @@ function Resumo() {
             ))}
           </div>
         </section>
-
       </section>
     </main>
   );

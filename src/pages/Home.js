@@ -10,7 +10,6 @@ function Home({ darkMode = true }) {
   const { lang } = useContext(LangContext);
   const dados = curriculo();
 
-
   const t = {
     pt: {
       homeTitle: "Bem-vindo ao meu perfil!",
@@ -18,11 +17,11 @@ function Home({ darkMode = true }) {
       profEvol: "Evolução Profissional",
       featuredProjects: "Projetos em Destaque",
       testimonials: "O que dizem sobre mim",
-      achievements: "Minhas Conquistas",
       curriculoDownloadPT: "Baixar Currículo em PT-BR",
       curriculoDownloadEN: "Baixar Currículo em EN-US",
       titleFinal: "Pronto para colaborar?",
-      msgFinal: "Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para fazer parte de sua visão.",
+      msgFinal:
+        "Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para fazer parte de sua visão.",
       btnFinal: "Entre em Contato",
     },
     en: {
@@ -31,13 +30,13 @@ function Home({ darkMode = true }) {
       profEvol: "Professional Evolution",
       featuredProjects: "Featured Projects",
       testimonials: "What they say about me",
-      achievements: "My achievements",
       curriculoDownloadPT: "Download Resume in PT-BR",
       curriculoDownloadEN: "Download Resume in EN-US",
       titleFinal: "Ready to collaborate?",
-      msgFinal: "I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
+      msgFinal:
+        "I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
       btnFinal: "Contact Me",
-    }
+    },
   };
 
   const experiencia = [
@@ -48,7 +47,6 @@ function Home({ darkMode = true }) {
     { ano: "2025", conquistas: 9 },
   ];
 
-  /* ========= Dark Mode ========= */
   useEffect(() => {
     document.documentElement.setAttribute(
       "data-theme",
@@ -66,23 +64,26 @@ function Home({ darkMode = true }) {
               <i className="bi bi-house-door"></i> {t[lang].homeTitle}
             </h2>
             <h1>{dados.nome}</h1>
-            <p>{dados.textoInicialHome}</p>
+            <p>{dados.textoInicialHome[lang]}</p>
+
             <div className="btns-download">
-              <a 
-                href={dados.contatos.curriculo} 
-                className="btn-download" 
-                target="_blank" 
+              <a
+                href={dados.contatos.curriculo}
+                className="btn-download"
+                target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="bi bi-download"></i> {t[lang].curriculoDownloadPT} 
+                <i className="bi bi-download"></i>{" "}
+                {t[lang].curriculoDownloadPT}
               </a>
-              <a 
-                href={dados.contatos.curriculo} 
-                className="btn-download curriculo-en" 
-                target="_blank" 
+              <a
+                href={dados.contatos.curriculo}
+                className="btn-download curriculo-en"
+                target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="bi bi-download"></i> {t[lang].curriculoDownloadEN}
+                <i className="bi bi-download"></i>{" "}
+                {t[lang].curriculoDownloadEN}
               </a>
             </div>
           </div>
@@ -90,10 +91,12 @@ function Home({ darkMode = true }) {
           {/* LADO DIREITO */}
           <div className="lado-direito">
             <div className="foto-container">
-              <img src={"/Images/Foto-Usuario.jpg"} alt="Foto de Perfil" />
+              <img src="/Images/Foto-Usuario.jpg" alt="Foto de Perfil" />
             </div>
-            <h2>{dados.cargo}</h2>
-            <h4>{dados.cidade} - {dados.estado}</h4>
+            <h2>{dados.cargo[lang]}</h2>
+            <h4>
+              {dados.cidade} - {dados.estado}
+            </h4>
           </div>
         </div>
 
@@ -117,7 +120,11 @@ function Home({ darkMode = true }) {
               <XAxis dataKey="ano" />
               <YAxis />
               <Tooltip />
-              <Line type="monotone" dataKey="conquistas" stroke="#0046c7" />
+              <Line
+                type="monotone"
+                dataKey="conquistas"
+                stroke="#0046c7"
+              />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -126,8 +133,14 @@ function Home({ darkMode = true }) {
           <h3>{t[lang].featuredProjects}</h3>
           <div className="projetos-grid">
             {dados.projetos.slice(0, 3).map((p, index) => (
-              <a key={index} href={p.link} target="_blank" className="projeto-card">
-                <i className={`bi ${p.icon}`}></i> {p.title}
+              <a
+                key={index}
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="projeto-card"
+              >
+                <i className={`bi ${p.icon}`}></i> {p.title[lang]}
               </a>
             ))}
           </div>
@@ -135,9 +148,10 @@ function Home({ darkMode = true }) {
 
         <div className="testemunhos">
           <h3>{t[lang].testimonials}</h3>
-          {dados.oqueDizemSobreMim.map((texto, index) => (
+          {dados.oqueDizemSobreMim[lang].map((texto, index) => (
             <blockquote key={index}>
-              <span className="Cor-Primaria">"</span> {texto} <span className="Cor-Primaria">"</span>
+              <span className="Cor-Primaria">"</span> {texto}{" "}
+              <span className="Cor-Primaria">"</span>
             </blockquote>
           ))}
         </div>
@@ -146,7 +160,10 @@ function Home({ darkMode = true }) {
           <h2>{t[lang].titleFinal}</h2>
           <p>{t[lang].msgFinal}</p>
           <div className="btns-download">
-            <a onClick={() => window.location.href = '/contato'} className="btn-download">
+            <a
+              onClick={() => (window.location.href = "/contato")}
+              className="btn-download"
+            >
               <i className="bi bi-envelope"></i> {t[lang].btnFinal}
             </a>
           </div>
