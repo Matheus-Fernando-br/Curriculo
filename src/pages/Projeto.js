@@ -19,7 +19,7 @@ function Projetos() {
   };
 
     return (
-        <main className="Content page-resumo">
+        <main className="Content page-project">
         {/* PROJETOS */}
         <section className="resumo-section">
           <h1 className="Title-Pag"><i className="bi bi-diagram-3"></i> {t[lang].projects}</h1>

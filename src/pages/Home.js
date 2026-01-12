@@ -93,7 +93,7 @@ function Home({ darkMode = true }) {
               <img src={"/Images/Foto-Usuario.jpg"} alt="Foto de Perfil" />
             </div>
             <h2>{dados.cargo}</h2>
-            <h3>{dados.cidade} - {dados.estado}</h3>
+            <h4>{dados.cidade} - {dados.estado}</h4>
           </div>
         </div>
 
@@ -145,9 +145,11 @@ function Home({ darkMode = true }) {
         <div className="espaco-final">
           <h2>{t[lang].titleFinal}</h2>
           <p>{t[lang].msgFinal}</p>
-          <button onClick={() => window.location.href = '/contato'}>
-            <i className="bi bi-envelope"></i> {t[lang].btnFinal}
-          </button>
+          <div className="btns-download">
+            <a onClick={() => window.location.href = '/contato'} className="btn-download">
+              <i className="bi bi-envelope"></i> {t[lang].btnFinal}
+            </a>
+          </div>
         </div>
       </section>
     </main>
