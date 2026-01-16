@@ -26,23 +26,34 @@ function Projetos() {
 
         <p className="projetos-intro">{t[lang].msg}</p>
 
-        <div className="grid-cards-project">
-          {dados.projetos.map((p, index) => (
-            <a
-              key={index}
-              href={p.link}
-              target="_blank"
-              rel="noreferrer"
-              className="card link-card"
+       <div className="grid-cards-project">
+        {dados.projetos.map((p, index) => (
+          <a
+            key={index}
+            href={p.link}
+            target="_blank"
+            rel="noreferrer"
+            className="card link-card project-card"
+          >
+            <div
+              className="project-image"
+              style={{ backgroundImage: `url(${p.image})` }}
             >
-              <div className="card-header-inline">
-                <i className={`bi ${p.icon}`}></i>
-                <h4>{p.title[lang]}</h4>
+              <div className="overlay">
+                Ver projeto
               </div>
-              <p>{p.details[lang]}</p>
-            </a>
-          ))}
-        </div>
+            </div>
+
+            <div className="card-header-inline">
+              <i className={`bi ${p.icon}`}></i>
+              <h4>{p.title[lang]}</h4>
+            </div>
+
+            <p>{p.details[lang]}</p>
+          </a>
+        ))}
+      </div>
+
       </section>
     </main>
   );

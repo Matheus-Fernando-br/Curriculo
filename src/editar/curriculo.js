@@ -186,6 +186,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Sistema completo para emissão de notas eletrônicas (NFe).",
           en: "Complete system for issuing electronic invoices (NFe).",
         },
+        image: "../Projects/PROJETO FINC.png",
       },
       {
         title: {
