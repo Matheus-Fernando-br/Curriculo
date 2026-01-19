@@ -160,10 +160,7 @@ function Home({ darkMode = true }) {
           <h2>{t[lang].titleFinal}</h2>
           <p>{t[lang].msgFinal}</p>
           <div className="btns-download">
-            <a
-              onClick={() => (window.location.href = "/contato")}
-              className="btn-download"
-            >
+            <a href="/contato" className="btn-download">
               <i className="bi bi-envelope"></i> {t[lang].btnFinal}
             </a>
           </div>
