@@ -10,10 +10,12 @@ function Projetos() {
     pt: {
       projects: "Projetos",
       msg: "Uma coleção dos projetos que desenvolvi, demonstrando minhas habilidades e experiência.",
+      view: "Ver Projeto",
     },
     en: {
       projects: "Projects",
       msg: "A collection of projects I've developed, showcasing my skills and experience.",
+      view: "View Project",
     },
   };
 
@@ -26,34 +28,29 @@ function Projetos() {
 
         <p className="projetos-intro">{t[lang].msg}</p>
 
-       <div className="grid-cards-project">
-        {dados.projetos.map((p, index) => (
-          <a
-            key={index}
-            href={p.link}
-            target="_blank"
-            rel="noreferrer"
-            className="card link-card project-card"
-          >
-            <div
-              className="project-image"
-              style={{ backgroundImage: `url(${p.image})` }}
+        <div className="grid-cards-project">
+          {dados.projetos.map((p, index) => (
+            <a
+              key={index}
+              href={p.link}
+              target="_blank"
+              rel="noreferrer"
+              className="project-card"
             >
-              <div className="overlay">
-                Ver projeto
+              <div className="project-image">
+                <img src={p.image} alt={p.title[lang]} />
+                <div className="overlay">{t[lang].view}</div>
               </div>
-            </div>
 
-            <div className="card-header-inline">
-              <i className={`bi ${p.icon}`}></i>
-              <h4>{p.title[lang]}</h4>
-            </div>
+              <div className="card-header-inline">
+                <i className={`bi ${p.icon}`}></i>
+                <h4>{p.title[lang]}</h4>
+              </div>
 
-            <p>{p.details[lang]}</p>
-          </a>
-        ))}
-      </div>
-
+              <p>{p.details[lang]}</p>
+            </a>
+          ))}
+        </div>
       </section>
     </main>
   );

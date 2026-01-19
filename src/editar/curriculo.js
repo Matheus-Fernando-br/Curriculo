@@ -199,6 +199,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Sistema gratuito que gera currículo formatado.",
           en: "Free system that generates a formatted resume.",
         },
+        image: "../Projects/Gerador de Currículo Online.png",
       },
       {
         title: {
@@ -211,6 +212,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Site institucional para igreja com informações e eventos.",
           en: "Institutional church website with information and events.",
         },
+        image: "../Projects/Centro Internacional de Avivamento Primavera.png",
       },
       {
         title: {
@@ -223,6 +225,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Aplicação para baixar vídeos do YouTube em MP4 ou MP3.",
           en: "Application to download YouTube videos in MP4 or MP3.",
         },
+        image: "../Projects/DownYT.png",
       },
       {
         title: {
@@ -235,6 +238,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Jogo simples do Mario feito em Java com Swing.",
           en: "Simple Mario game made in Java using Swing.",
         },
+        image: "../Projects/Mario Game.png",
       },
       {
         title: {
@@ -302,7 +306,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
 
     // ------------------ CONQUISTAS ------------------
     minhasConquistas: [
-      { numero: 1, descricao: { pt: "Projeto Concluído", en: "Completed Project" } },
+      { numero: 3, descricao: { pt: "Projeto Concluído", en: "Completed Project" } },
       { numero: 2, descricao: { pt: "Anos de Experiência", en: "Years of Experience" } },
       { numero: 3, descricao: { pt: "Certificações", en: "Certifications" } },
     ],

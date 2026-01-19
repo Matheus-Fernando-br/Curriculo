@@ -61,6 +61,18 @@ a {
   color: var(--text-color-white);
 }
 
+html,
+body,
+* {
+  transition:
+    background-color 0.4s ease,
+    color 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    fill 0.4s ease,
+    stroke 0.4s ease;
+}
+
 /* ==========================================================================
    2. HEADER & NAVEGAÇÃO
    ========================================================================== */
@@ -386,6 +398,7 @@ a {
 }
 .espaco-final .btn-download {
   margin-top: 1rem;
+  cursor: pointer;
 }
 
 
@@ -552,8 +565,9 @@ a {
 }
 
 /* ==========================================================================
-   6. PROJETOS
+   PROJETOS
    ========================================================================== */
+
 .page-project {
   width: 100%;
   padding: 2rem 4rem;
@@ -566,6 +580,11 @@ a {
   margin-bottom: 1rem;
 }
 
+.projetos-intro {
+  margin-bottom: 2rem;
+}
+
+/* GRID 3 COLUNAS */
 .grid-cards-project {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -576,44 +595,58 @@ a {
 .project-card {
   text-decoration: none;
   color: inherit;
+  box-shadow: 0 0 5px var(--primary-color);
+  padding: 2rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
 }
 
-/* IMAGEM */
+.project-card:hover {
+  transform: scale(0.99);
+  box-shadow: 0 0 8px 2px var(--primary-color);
+}
+
+/* CONTAINER DA IMAGEM */
 .project-image {
-  width: 100%;
-  height: 160px;
-  background-size: cover;
-  background-position: center top;
-  border-radius: 20px;
   position: relative;
+  width: 100%;
+  height: 25vh;
   overflow: hidden;
-  transition: background-position 6s ease;
+  border-radius: 20px;
+}
+
+/* IMAGEM GRANDE (SITE INTEIRO) */
+.project-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transform: translateY(0);
+  transition: transform 6s ease;
 }
 
 /* SCROLL DA IMAGEM NO HOVER */
-.project-card:hover .project-image {
-  background-position: center bottom;
+.project-card:hover .project-image img {
+  transform: translateY(calc(-100% + 25vh));
 }
 
 /* OVERLAY */
 .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
-  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.603);
+  opacity: 1;
+  transition: opacity 0.6s ease;
+  pointer-events: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 28px;
-  font-weight: 600;
-  color: var(--cor-prim);
-  opacity: 0;
-  transition: opacity 0.4s ease;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-weight: 200;
 }
 
-/* OPACITY NO HOVER */
+/* OVERLAY SOME NO HOVER */
 .project-card:hover .overlay {
-  opacity: 1;
+  opacity: 0;
 }
 
 /* HEADER */
@@ -626,6 +659,12 @@ a {
 
 .card-header-inline h4 {
   font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+  .grid-cards-project {
+    grid-template-columns: 1fr;
+  }
 }
 
 
@@ -859,7 +898,7 @@ a {
 
 @keyframes shadowGrow {
   0% { box-shadow: 0 0 0px rgba(0, 0, 0, 0); }
-  100% { box-shadow: 0 0 15px 2px var(--primary-color); }
+  100% { box-shadow: 0 0 5px 2px var(--primary-color); }
 }
 
 .page-home { animation: zoomIn 1s ease forwards; }
