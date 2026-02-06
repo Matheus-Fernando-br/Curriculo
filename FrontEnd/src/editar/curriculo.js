@@ -23,6 +23,10 @@ function curriculo() {
       en: "English - Basic",
     },
 
+    telegramBot: {
+      chatId: "987654321"
+    },
+
     // ------------------ TEXTOS ------------------
     textoInicialHome: {
       pt: "Aqui você pode conhecer mais sobre minha formação, habilidades e projetos.",

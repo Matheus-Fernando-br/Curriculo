@@ -1,10 +1,56 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import curriculo from "../editar/curriculo";
 import { LangContext } from "../context/LangContext";
 
 function Contato() {
   const dados = curriculo();
   const { lang } = useContext(LangContext);
+
+  const [statusMsg, setStatusMsg] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const API_URL = "https://curriculo-9mqo.onrender.com/api/send-message";
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setStatusMsg("");
+
+    const formData = new FormData(e.target);
+
+    const body = {
+      nome: formData.get("Nome"),
+      email: formData.get("Email"),
+      assunto: formData.get("Assunto"),
+      mensagem: formData.get("Mensagem"),
+    };
+
+    try {
+      const res = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(body),
+      });
+
+      const result = await res.json();
+
+      if (result.success) {
+        setStatusMsg("✅ Mensagem enviada com sucesso!");
+        e.target.reset();
+      } else {
+        setStatusMsg("❌ Erro ao enviar mensagem.");
+      }
+
+    } catch {
+      setStatusMsg("❌ Falha de conexão com servidor.");
+    }
+
+    setLoading(false);
+  };
+
 
   const t = {
     pt: {
@@ -133,18 +179,15 @@ function Contato() {
         <div className="contact-right">
           <h2>{t[lang].callMe}</h2>
 
-          <form
-            className="contact-form"
-            action="mailto:matheus1030br@gmail.com"
-            method="POST"
-            encType="text/plain"
-          >
+          <form className="contact-form" onSubmit={handleSubmit}>
+
             <label>{t[lang].formName}</label>
             <input
               type="text"
               name="Nome"
               placeholder={t[lang].inputPlaceholderName}
               required
+              disabled={loading}
             />
 
             <label>{t[lang].formEmail}</label>
@@ -153,6 +196,7 @@ function Contato() {
               name="Email"
               placeholder={t[lang].inputPlaceholderEmail}
               required
+              disabled={loading}
             />
 
             <label>{t[lang].formSubject}</label>
@@ -161,6 +205,7 @@ function Contato() {
               name="Assunto"
               placeholder={t[lang].inputPlaceholderSubject}
               required
+              disabled={loading}
             />
 
             <label>{t[lang].formMessage}</label>
@@ -169,11 +214,13 @@ function Contato() {
               placeholder={t[lang].inputPlaceholderMessage}
               rows="5"
               required
+              disabled={loading}
             />
 
-            <button type="submit">
-              <i className="bi bi-send"></i> {t[lang].btnFinal}
+            <button type="submit" disabled={loading}>      
+              {loading ? "Enviando..." : t[lang].btnFinal}
             </button>
+            {statusMsg && <p className="form-status">{statusMsg}</p>}
           </form>
         </div>
       </section>
