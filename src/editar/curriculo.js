@@ -216,14 +216,14 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       },
       {
         title: {
-          pt: "Baixador de Vídeos do YouTube",
-          en: "YouTube Video Downloader",
+          pt: "Conversor de Video para Audio",
+          en: "Video to Audio Converter",
         },
-        link: "https://down-yt.vercel.app",
+        link: "https://conversordevideo.vercel.app/",
         icon: "bi-arrow-down-square-fill",
         details: {
-          pt: "Aplicação para baixar vídeos do YouTube em MP4 ou MP3.",
-          en: "Application to download YouTube videos in MP4 or MP3.",
+          pt: "Aplicação para converter vídeos em MP3 básica e funcional.",
+          en: "Application to convert videos to MP3 basic and functional.",
         },
         image: "../Projects/DownYT.png",
       },
@@ -251,6 +251,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Sistema desktop de reservas de restaurante feito com Swing.",
           en: "Desktop restaurant reservation system built with Swing.",
         },
+         image: "../Projects/Restaurante.jpg",
       },
       {
         title: {
@@ -263,6 +264,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Calculadora simples feita em Java usando Swing.",
           en: "Simple calculator made in Java using Swing.",
         },
+        image: "../Projects/Calculadora.png",
       },
     ],
 
