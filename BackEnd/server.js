@@ -1,7 +1,7 @@
 import express from "express";
 import cors from "cors";
 import axios from "axios";
-import dotenv, { parse } from "dotenv";
+import dotenv from "dotenv";
 
 dotenv.config();
 
@@ -10,48 +10,37 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-function escapeHTML(text) {
-  return text
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;");
-}
-
-
 app.post("/api/send-message", async (req, res) => {
   try {
     const { nome, email, assunto, mensagem } = req.body;
 
-    if (!nome || !email || !mensagem) {
+    if (!nome || !mensagem) {
       return res.status(400).json({ error: "Dados inválidos" });
     }
 
-    const texto = `
-    📩 <b>NOVO CONTATO DO SITE</b>
-    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    const texto = `📩 NOVO CONTATO DO SITE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-    <b>👤 Nome:</b> ${escapeHTML(nome)}
-    <b>📅Data:</b> ${new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })}
-    <b>📧 Email:</b> ${escapeHTML(email)}
-    <b>📌 Assunto:</b> ${escapeHTML(assunto)}
+👤 Nome: ${nome}
+📅 Data: ${new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })}
+📧 Email: ${email || "Não informado"}
+📌 Assunto: ${assunto || "Não informado"}
 
-    <b>💬 Mensagem:</b>
-    <i>${escapeHTML(mensagem)}</i>
-    `;
+💬 Mensagem:
+${mensagem}`;
 
     await axios.post(
       `https://api.telegram.org/bot${process.env.TELEGRAM_TOKEN}/sendMessage`,
       {
         chat_id: process.env.TELEGRAM_CHAT_ID,
-        text: texto,
-        parse_mode: "HTML"
+        text: texto
       }
     );
 
     res.json({ success: true });
 
   } catch (error) {
-    console.error(error.response?.data || error);
+    console.error("Erro Telegram:", error.response?.data || error);
     res.status(500).json({ success: false });
   }
 });

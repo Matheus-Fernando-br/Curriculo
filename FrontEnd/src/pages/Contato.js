@@ -35,7 +35,12 @@ function Contato() {
         body: JSON.stringify(body),
       });
 
+      if (!res.ok) {
+        throw new Error("Erro backend");
+      }
+
       const result = await res.json();
+
 
       if (result.success) {
         setStatusMsg("✅ Mensagem enviada com sucesso!");
@@ -218,10 +223,10 @@ function Contato() {
               disabled={loading}
             />
 
-            <button type="submit" disabled={loading}>   
-              {loading && <span className="spinner-btn"></span>}   
-              {loading ? "" : t[lang].btnFinal}
+            <button type="submit" disabled={loading}>
+              {loading ? <span className="spinner-btn"></span> : t[lang].btnFinal}
             </button>
+
             {statusMsg && <p className="form-status">{statusMsg}</p>}
           </form>
         </div>
