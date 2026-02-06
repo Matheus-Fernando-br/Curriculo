@@ -768,7 +768,34 @@ body,
 
 .form-status{
   margin-top:10px;
+  text-align: center;
   font-weight:bold;
+}
+
+.divider-contatc {
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.spinner-btn {
+    width: 18px;
+    height: 18px;
+    border: 3px solid #ffffff55;
+    border-top: 3px solid white;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: auto;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.contact-right .required {
+  color: red;
+  font-weight: bold;
 }
 
 

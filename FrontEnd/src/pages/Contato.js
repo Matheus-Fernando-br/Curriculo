@@ -179,9 +179,11 @@ function Contato() {
         <div className="contact-right">
           <h2>{t[lang].callMe}</h2>
 
+          <hr className="divider-contatc" />
+
           <form className="contact-form" onSubmit={handleSubmit}>
 
-            <label>{t[lang].formName}</label>
+            <label>{t[lang].formName} <span className="required">*</span></label>
             <input
               type="text"
               name="Nome"
@@ -195,11 +197,10 @@ function Contato() {
               type="email"
               name="Email"
               placeholder={t[lang].inputPlaceholderEmail}
-              required
               disabled={loading}
             />
 
-            <label>{t[lang].formSubject}</label>
+            <label>{t[lang].formSubject} <span className="required">*</span></label>
             <input
               type="text"
               name="Assunto"
@@ -208,7 +209,7 @@ function Contato() {
               disabled={loading}
             />
 
-            <label>{t[lang].formMessage}</label>
+            <label>{t[lang].formMessage} <span className="required">*</span></label>
             <textarea
               name="Mensagem"
               placeholder={t[lang].inputPlaceholderMessage}
@@ -217,8 +218,9 @@ function Contato() {
               disabled={loading}
             />
 
-            <button type="submit" disabled={loading}>      
-              {loading ? "Enviando..." : t[lang].btnFinal}
+            <button type="submit" disabled={loading}>   
+              {loading && <span className="spinner-btn"></span>}   
+              {loading ? "" : t[lang].btnFinal}
             </button>
             {statusMsg && <p className="form-status">{statusMsg}</p>}
           </form>
