@@ -97,6 +97,16 @@ function Home({ darkMode = true }) {
             <h4>
               {dados.cidade} - {dados.estado}
             </h4>
+            <div className="competencias">
+              <div className="competencias-tags">
+                {dados.competencias.map((comp, index) => (
+                  <span key={index} className="tag">
+                    <i className={`bi ${comp.icon}`}></i>{" "}
+                    {comp.nome[lang]}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
 

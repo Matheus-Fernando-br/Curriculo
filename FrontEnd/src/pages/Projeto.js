@@ -11,11 +11,13 @@ function Projetos() {
       projects: "Projetos",
       msg: "Uma coleção dos projetos que desenvolvi, demonstrando minhas habilidades e experiência.",
       view: "Ver Projeto",
+      git: "Ver Código",
     },
     en: {
       projects: "Projects",
       msg: "A collection of projects I've developed, showcasing my skills and experience.",
       view: "View Project",
+      git: "View Code",
     },
   };
 
@@ -30,17 +32,18 @@ function Projetos() {
 
         <div className="grid-cards-project">
           {dados.projetos.map((p, index) => (
-            <a
+            <div
               key={index}
-              href={p.link}
               target="_blank"
               rel="noreferrer"
               className="project-card"
             >
+              <a href={p.link} about="_blank" rel="noreferrer" className="project-card-view">
               <div className="project-image">
                 <img src={p.image} alt={p.title[lang]} />
                 <div className="overlay">{t[lang].view}</div>
               </div>
+              </a>
 
               <div className="card-header-inline">
                 <i className={`bi ${p.icon}`}></i>
@@ -48,7 +51,19 @@ function Projetos() {
               </div>
 
               <p>{p.details[lang]}</p>
-            </a>
+              <div className="links">
+                <a href={p.git} about="_blank" rel="noreferrer">
+                  <div className="git">
+                    <i class="bi bi-github"></i>  {t[lang].git}
+                  </div>
+                </a>
+                <a href={p.link} about="_blank" rel="noreferrer">
+                  <div className="demo">
+                    Demo  <i class="bi bi-box-arrow-up-right"></i>
+                  </div>
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </section>

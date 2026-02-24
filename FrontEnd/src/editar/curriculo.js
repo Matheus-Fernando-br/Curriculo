@@ -161,20 +161,42 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
 
     // ------------------ COMPETÊNCIAS ------------------
     competencias: [
-      { nome: { pt: "ANÁLISE DE DADOS", en: "DATA ANALYSIS" }, icon: "bi-bar-chart-line" },
-      { nome: { pt: "JAVA", en: "JAVA" }, icon: "bi-cup-hot" },
-      { nome: { pt: "JAVASCRIPT", en: "JAVASCRIPT" }, icon: "bi-braces" },
-      { nome: { pt: "REACT", en: "REACT" }, icon: "bi-lightbulb" },
-      { nome: { pt: "NODE.JS/EXPRESS", en: "NODE.JS/EXPRESS" }, icon: "bi-diagram-3" },
-      { nome: { pt: "HTML", en: "HTML" }, icon: "bi-filetype-html" },
+      { nome: { pt: "Análise de Dados", en: "DATA ANALYSIS" }, icon: "bi-bar-chart-line" },
+      { nome: { pt: "JavaScript", en: "JAVASCRIPT" }, icon: "bi-braces" },
+      { nome: { pt: "React", en: "REACT" }, icon: "bi-lightbulb" },
+      { nome: { pt: "Node.Js/Express", en: "NODE.JS/EXPRESS" }, icon: "bi-diagram-3" },
       { nome: { pt: "CSS", en: "CSS" }, icon: "bi-filetype-css" },
-      { nome: { pt: "PYTHON", en: "PYTHON" }, icon: "bi-filetype-py" },
-      { nome: { pt: "MYSQL", en: "MYSQL" }, icon: "bi-database" },
-      { nome: { pt: "GIT & GITHUB", en: "GIT & GITHUB" }, icon: "bi-git" },
-      { nome: { pt: "NETWORKING", en: "NETWORKING" }, icon: "bi-hdd-network" },
+      { nome: { pt: "Python", en: "PYTHON" }, icon: "bi-filetype-py" },
+      { nome: { pt: "MySQL", en: "MYSQL" }, icon: "bi-database" },
       { nome: { pt: "MICROSOFT OFFICE", en: "MICROSOFT OFFICE" }, icon: "bi-microsoft" },
-      { nome: { pt: "E-SUPPLIERS", en: "E-SUPPLIERS" }, icon: "bi-cart-check" },
-      { nome: { pt: "SAP", en: "SAP" }, icon: "bi-building" },
+    ],
+
+    // ------------------ ESPECIALIDADES ------------------
+    especialidades: [
+      {
+        titulo: { pt: "Desenvolvimento Web", en: "Web Development" },
+        descricao: {
+          pt: "Criação de sites e aplicações web modernas, responsivas e otimizadas para alta performance.",
+          en: "Creation of modern, responsive and high-performance web applications."
+        },
+        icon: "bi-code-slash"
+      },
+      {
+        titulo: { pt: "Banco de Dados", en: "Databases" },
+        descricao: {
+          pt: "Modelagem, estruturação e integração de bancos de dados relacionais e não relacionais.",
+          en: "Modeling, structuring and integrating relational and non-relational databases."
+        },
+        icon: "bi-database"
+      },
+      {
+        titulo: { pt: "Back-end & APIs", en: "Back-end & APIs" },
+        descricao: {
+          pt: "Desenvolvimento de APIs robustas e sistemas escaláveis.",
+          en: "Development of robust APIs and scalable back-end systems."
+        },
+        icon: "bi-server"
+      }
     ],
 
     // ------------------ PROJETOS ------------------
@@ -191,10 +213,11 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           en: "Complete system for issuing electronic invoices (NFe).",
         },
         image: "../Projects/PROJETO FINC.png",
+        git: "https://github.com/Matheus-Fernando-br/Project-FINC",
       },
       {
         title: {
-          pt: "Gerador de Currículo Online",
+          pt: "Gerador de Currículo Online Automatizado",
           en: "Online Resume Generator",
         },
         link: "https://geradorcurriculoonline.vercel.app",
@@ -204,11 +227,12 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           en: "Free system that generates a formatted resume.",
         },
         image: "../Projects/Gerador de Currículo Online.png",
+        git: "https://github.com/Matheus-Fernando-br/Gerador-de-Curriculo-Online",
       },
       {
         title: {
-          pt: "Site para Igreja em REACT",
-          en: "Church Website in REACT",
+          pt: "Site Institucional para Igreja em REACT",
+          en: "Institutional website for a church in REACT",
         },
         link: "https://cia-primavera.vercel.app",
         icon: "bi-house-door",
@@ -217,11 +241,12 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           en: "Institutional church website with information and events.",
         },
         image: "../Projects/Centro Internacional de Avivamento Primavera.png",
+        git: "https://github.com/Matheus-Fernando-br/CIA-PRIMAVERA",
       },
       {
         title: {
-          pt: "Conversor de Video para Audio",
-          en: "Video to Audio Converter",
+          pt: "Conversor minimalista de Video para Audio",
+          en: "Minimalist Video to Audio Converter",
         },
         link: "https://conversordevideo.vercel.app/",
         icon: "bi-arrow-down-square-fill",
@@ -230,11 +255,12 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           en: "Application to convert videos to MP3 basic and functional.",
         },
         image: "../Projects/DownYT.png",
+        git:"https://github.com/Matheus-Fernando-br/DownYT",
       },
       {
         title: {
-          pt: "Jogo Mario Jump Simples",
-          en: "Simple Mario Jump Game",
+          pt: "Jogo Mario Jump Simples Responsivo",
+          en: "Simple and responsive Mario Jump game.",
         },
         link: "https://mario-game-plum.vercel.app",
         icon: "bi-controller",
@@ -243,6 +269,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           en: "Simple Mario game made in Java using Swing.",
         },
         image: "../Projects/Mario Game.png",
+        git: "https://github.com/Matheus-Fernando-br/Mario-Game",
       },
       {
         title: {
@@ -255,7 +282,9 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           pt: "Sistema desktop de reservas de restaurante feito com Swing.",
           en: "Desktop restaurant reservation system built with Swing.",
         },
-         image: "../Projects/Restaurante.jpg",
+        image: "../Projects/Restaurante.jpg",
+        git: "https://github.com/Matheus-Fernando-br/Reserva-Restaurante",
+
       },
       {
         title: {
@@ -269,6 +298,8 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           en: "Simple calculator made in Java using Swing.",
         },
         image: "../Projects/Calculadora.png",
+        git: "https://github.com/Matheus-Fernando-br/Simple-Calculator-Project",
+
       },
     ],
 

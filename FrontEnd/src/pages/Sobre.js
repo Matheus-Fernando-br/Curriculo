@@ -15,7 +15,7 @@ function Sobre() {
       idioma: "Idioma",
       regiao: "Região",
       years: "anos",
-      skills: "Habilidades",
+      skills: "Especialidades",
     },
     en: {
       aboutTitle: "About Me",
@@ -25,7 +25,7 @@ function Sobre() {
       idioma: "Language",
       regiao: "Region",
       years: "years",
-      skills: "Skills",
+      skills: "Specialties",
     },
   };
 
@@ -91,19 +91,25 @@ function Sobre() {
           </div>
         </div>
 
-        {/* ===== HARD SKILLS ===== */}
-        <div className="competencias">
-          <h3>
-            <i className="bi bi-lightning-charge"></i> {t[lang].skills}
-          </h3>
+        {/* ===== Especialidades ===== */}
+        <div id="especialidades" className="services">
+          <div className="container">
+              <h3>
+                <i className="bi bi-list-check"></i> {t[lang].skills}
+              </h3>
 
-          <div className="competencias-tags">
-            {dados.competencias.map((comp, index) => (
-              <span key={index} className="tag">
-                <i className={`bi ${comp.icon}`}></i>{" "}
-                {comp.nome[lang]}
-              </span>
-            ))}
+            <div className="services-grid">
+              {dados.especialidades.map((item, index) => (
+                <div key={index} className="service-card">
+                  <div className="service-icon">
+                    <i className={`bi ${item.icon}`}></i>
+                  </div>
+
+                  <h3>{item.titulo[lang]}</h3>
+                  <p>{item.descricao[lang]}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
