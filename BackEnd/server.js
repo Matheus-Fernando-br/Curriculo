@@ -19,7 +19,7 @@ app.post("/api/send-message", async (req, res) => {
     }
 
     const texto = `📩 NOVO CONTATO DO SITE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+━ ━ ━ ━ ━ ━ ━ ━ ━ ━
 
 👤 Nome: ${nome}
 📅 Data: ${new Date().toLocaleString("pt-BR", { timeZone: "America/Sao_Paulo" })}

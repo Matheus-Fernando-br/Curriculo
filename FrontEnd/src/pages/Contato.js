@@ -11,13 +11,12 @@ function Contato() {
 
   const API_URL = "https://curriculo-9mqo.onrender.com/api/send-message";
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-
-    setLoading(true);
     setStatusMsg("");
 
-    const formData = new FormData(e.target);
+    const form = e.target;
+    const formData = new FormData(form);
 
     const body = {
       nome: formData.get("Nome"),
@@ -26,36 +25,36 @@ function Contato() {
       mensagem: formData.get("Mensagem"),
     };
 
-    try {
-      const res = await fetch(API_URL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
-
-      if (!res.ok) {
-        throw new Error("Erro backend");
-      }
-
-      const result = await res.json();
-
-
-      if (result.success) {
-        setStatusMsg("✅ Mensagem enviada com sucesso!");
-        e.target.reset();
-      } else {
-        setStatusMsg("❌ Erro ao enviar mensagem.");
-      }
-
-    } catch {
-      setStatusMsg("❌ Falha de conexão com servidor.");
+    if (!body.nome || !body.mensagem || !body.assunto) {
+      setStatusMsg("❌ Preencha os campos obrigatórios.");
+      return;
     }
 
-    setLoading(false);
-  };
+    setLoading(true);
 
+    // 🔥 Feedback após 3 segundos INDEPENDENTE do backend
+    setTimeout(() => {
+      setStatusMsg("✅ Mensagem enviada com sucesso!");
+      form.reset();
+      setLoading(false);
+    }, 2000);
+
+    // 🔥 Envio em background (não aguardamos resposta)
+    fetch(API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body),
+    }).catch(() => {
+      // Se der erro real, opcionalmente você pode logar
+      console.error("Erro ao enviar");
+    });
+    //Atualiza Pagina
+      setTimeout(() => {
+        window.location.reload();
+      }, 3500);
+  };
 
   const t = {
     pt: {

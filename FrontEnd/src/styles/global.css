@@ -1139,7 +1139,7 @@ body,
   .lado-direito { width: 100% !important; margin-left: 0 !important; margin-top: 1rem; }
   .foto-container { width: 150px; height: 150px; }
   .grafico-container, .destaques, .testemunhos, .espaco-final { padding: 2rem .5rem; text-align: center;}
-  .espaco-final .btn-download { margin: 0 auto; }
+  .espaco-final .btn-download { margin: 1rem auto; }
   .competencias { margin-bottom: 2rem; }
   
   /* --- Sobre Mim --- */
@@ -1153,7 +1153,7 @@ body,
   }
   
   /* --- Resumo --- */
-  .page-resumo { padding: 2rem 1rem; }
+  .page-resumo { padding: 2rem 3rem; }
   .resumo-header h2 { font-size: 1.6rem; }
   .top-section, .bottom-section { grid-template-columns: 1fr; }
   
