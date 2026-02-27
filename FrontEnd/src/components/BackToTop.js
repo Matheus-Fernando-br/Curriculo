@@ -4,22 +4,28 @@ export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => {
-      setVisible(window.scrollY > 200);
-    };
+    function handleScroll() {
+      setVisible(window.scrollY > 300);
+    }
 
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }
+
   return (
-    <a
-      href="#scroll-container"
+    <button
+      type="button"
+      onClick={scrollToTop}
       className={`back-to-top ${visible ? "show" : ""}`}
-      aria-label="Voltar ao topo"
     >
-      <i className="bi bi-arrow-bar-up"></i>
-      <div className="water-fill"></div>
-    </a>
+      <i class="bi bi-arrow-bar-up"></i>
+    </button>
   );
 }

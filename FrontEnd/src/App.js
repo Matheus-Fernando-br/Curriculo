@@ -1,4 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+
 import Header from "./components/Header";
 import BackToTop from "./components/BackToTop";
 
@@ -7,9 +9,9 @@ import Sobre from "./pages/Sobre";
 import Resumo from "./pages/Resumo";
 import Projetos from "./pages/Projeto";
 import Contato from "./pages/Contato";
-import './styles/global.css';
 
 import { LangProvider } from "./context/LangContext";
+import "./styles/global.css";
 
 function App() {
   return (
@@ -24,7 +26,6 @@ function App() {
           <Route path="/contato" element={<Contato />} />
         </Routes>
 
-        {/* BOTÃO GLOBAL */}
         <BackToTop />
       </Router>
     </LangProvider>

@@ -37,7 +37,7 @@ function Contato() {
       setStatusMsg("✅ Mensagem enviada com sucesso!");
       form.reset();
       setLoading(false);
-    }, 2000);
+    }, 2500);
 
     // 🔥 Envio em background (não aguardamos resposta)
     fetch(API_URL, {
@@ -52,8 +52,8 @@ function Contato() {
     });
     //Atualiza Pagina
       setTimeout(() => {
-        window.location.reload();
-      }, 3500);
+        setStatusMsg("");
+      }, 7500);
   };
 
   const t = {
