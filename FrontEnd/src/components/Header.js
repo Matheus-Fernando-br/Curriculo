@@ -149,6 +149,11 @@ function Header() {
               {t[lang].resume}
             </Link>
           </li>
+          <li className={isActive("/projeto") ? "active" : ""}>
+            <Link to="/projeto" onClick={() => setMenuOpen(false)}>
+              {t[lang].projects}
+            </Link>
+          </li>
           <li className={isActive("/contato") ? "active" : ""}>
             <Link to="/contato" onClick={() => setMenuOpen(false)}>
               {t[lang].contact}

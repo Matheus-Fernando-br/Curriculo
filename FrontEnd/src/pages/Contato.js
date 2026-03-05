@@ -50,7 +50,7 @@ function Contato() {
       // Se der erro real, opcionalmente você pode logar
       console.error("Erro ao enviar");
     });
-    //Atualiza Pagina
+    //Atualiza Feedback
       setTimeout(() => {
         setStatusMsg("");
       }, 7500);
