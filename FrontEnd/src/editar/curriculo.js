@@ -245,6 +245,34 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       },
       {
         title: {
+          pt: "Site do Meu Casamento",
+          en: "My Wedding Website",
+        },
+        link: "https://casamentomatheusekariny.vercel.app/",
+        icon: "bi bi-heart-fill",
+        details: {
+          pt: "Website com informações do evento, local e lista de presentes.",
+          en: "Website with event details, location, and gift registry.",
+        },
+        image: "../Projects/casamento.png",
+        git: "https://github.com/Matheus-Fernando-br/Casamento",
+      },
+      {
+        title: {
+          pt: "Formulário Responsivo",
+          en: "Responsive Form",
+        },
+        link: "https://matheus-fernando-br.github.io/Formulario-Atividade-Unileste/",
+        icon: "bi bi-card-checklist",
+        details: {
+          pt: "Formulário responsivo focado na coleta e organização de dados.",
+          en: "Responsive form focused on data collection and organization.",
+        },
+        image: "../Projects/formulario.png",
+        git: "https://github.com/Matheus-Fernando-br/Formulario-Atividade-Unileste",
+      },
+      {
+        title: {
           pt: "Conversor minimalista de Video para Audio",
           en: "Minimalist Video to Audio Converter",
         },
