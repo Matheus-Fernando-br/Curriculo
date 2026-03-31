@@ -972,6 +972,43 @@ transform:translateY(.3rem);
   transform: translateY(-3px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.4);
 }
+/* padrão para todos os botões */
+button,
+.btn,
+input[type="submit"],
+input[type="button"]{
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* efeito brilho */
+button::after,
+.btn::after,
+input[type="submit"]::after,
+input[type="button"]::after{
+  content: "";
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  top: 0;
+  left: -120%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.35),
+    transparent
+  );
+  transition: left .5s ease;
+}
+
+/* animação ao passar o mouse */
+button:hover::after,
+.btn:hover::after,
+input[type="submit"]:hover::after,
+input[type="button"]:hover::after{
+  left: 120%;
+}
 
 .hr-redes {
   width: 100%;
@@ -1169,6 +1206,60 @@ transform:translateY(.3rem);
 .social-links a:hover {
   color: var(--primary-color);
   transform: scale(1.1);
+}
+
+/* TOOLTIP SOCIAL */
+
+.tooltip-social{
+
+position:relative;
+
+display:flex;
+
+flex-direction:column;
+
+align-items:center;
+
+}
+
+.tooltip-text-social{
+
+position:absolute;
+
+top:120%;
+
+left:50%;
+
+transform:translateX(-50%);
+
+background:var(--bg);
+
+color:var(--text);
+
+padding:.5vh .8vw;
+
+font-size:.7rem;
+
+border-radius:.6rem;
+
+border:1px solid var(--primary-color-bg);
+
+opacity:0;
+
+transition:.25s;
+
+white-space:nowrap;
+
+box-shadow:0 .6vh 1.5vh rgba(0,0,0,.08);
+
+}
+
+.tooltip-social:hover .tooltip-text-social{
+
+opacity:1;
+
+transform:translateX(-50%) translateY(.5vh);
+
 }
 
 /* ==========================================================================

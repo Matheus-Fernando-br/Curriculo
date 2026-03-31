@@ -158,22 +158,31 @@ function Contato() {
                 href={dados.contatos.github}
                 target="_blank"
                 rel="noopener noreferrer"
-              >
+                class="tooltip-social">
                 <i className="bi bi-github"></i>
+                <span class="tooltip-text-social">
+                  Visitar GitHub
+                </span>
               </a>
               <a
                 href={dados.contatos.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-              >
+                class="tooltip-social">
                 <i className="bi bi-linkedin"></i>
+                <span class="tooltip-text-social">
+                  Visitar Linkedin
+                </span>
               </a>
               <a
                 href={dados.contatos.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-              >
+                class="tooltip-social">
                 <i className="bi bi-instagram"></i>
+                <span class="tooltip-text-social">
+                  Visitar Instagram
+                </span>
               </a>
             </div>
           </div>
