@@ -105,13 +105,22 @@ function Header() {
 
       {/* DESKTOP RIGHT */}
       <div className="header-right">
-        <button className="icon-btn" onClick={toggleLang}>
-          <i className="bi bi-globe"></i> {lang.toUpperCase()}
-        </button>
-
-        <button className="icon-btn" onClick={() => setDarkMode(!darkMode)}>
+        <a className="tooltip-header">
+          <button className="icon-btn" onClick={toggleLang}>
+            <i className="bi bi-globe"></i> {lang.toUpperCase()}
+          </button>
+          <span class="tooltip-text-header">
+            Alterar idioma
+          </span>
+        </a>
+        <a className="tooltip-header">
+        <button className="icon-btn lightbtn" onClick={() => setDarkMode(!darkMode)}>
           <i className={`bi ${darkMode ? "bi-brightness-low-fill" : "bi-moon-fill"}`}></i>
         </button>
+        <span class="tooltip-text-header">
+          Alterar Tema
+        </span>
+        </a>
       </div>
 
       {/* HAMBURGER */}
