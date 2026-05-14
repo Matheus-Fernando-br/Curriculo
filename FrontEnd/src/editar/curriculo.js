@@ -24,7 +24,7 @@ function curriculo() {
     },
 
     telegramBot: {
-      chatId: "987654321"
+      chatId: "987654321",
     },
 
     // ------------------ TEXTOS ------------------
@@ -65,6 +65,28 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
 
     // ------------------ EXPERIÊNCIA PROFISSIONAL ------------------
     experiencia: [
+      {
+        empresa: "Baja Unileste",
+        periodo: {
+          pt: "Abr/2026 – Presente",
+          en: "Abr/2026 – Present",
+        },
+        descricao: {
+          pt: [
+            "Integrante do setor de Eletrônica da equipe Baja Unileste.",
+            "Apoio no desenvolvimento e testes de sistemas elétricos e eletrônicos do protótipo Baja.",
+            "Experiência com montagem de componentes, sistemas embarcados, Arduino e sensores eletrônicos.",
+            "Integração entre diferentes áreas da equipe durante o processo trainee.",
+          ],
+          en: [
+            "Member of the Electronics sector at Baja Unileste.",
+            "Support in the development and testing of electrical and electronic systems for the Baja prototype.",
+            "Experience with component assembly, embedded systems, Arduino, and electronic sensors.",
+            "Collaboration with different team sectors during the trainee process.",
+          ],
+        },
+        link: "https://linktr.ee/bajaunileste",
+      },
       {
         empresa: "Colégio Genoma",
         periodo: {
@@ -161,14 +183,23 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
 
     // ------------------ COMPETÊNCIAS ------------------
     competencias: [
-      { nome: { pt: "Análise de Dados", en: "DATA ANALYSIS" }, icon: "bi-bar-chart-line" },
+      {
+        nome: { pt: "Análise de Dados", en: "DATA ANALYSIS" },
+        icon: "bi-bar-chart-line",
+      },
       { nome: { pt: "JavaScript", en: "JAVASCRIPT" }, icon: "bi-braces" },
       { nome: { pt: "React", en: "REACT" }, icon: "bi-lightbulb" },
-      { nome: { pt: "Node.Js/Express", en: "NODE.JS/EXPRESS" }, icon: "bi-diagram-3" },
+      {
+        nome: { pt: "Node.Js/Express", en: "NODE.JS/EXPRESS" },
+        icon: "bi-diagram-3",
+      },
       { nome: { pt: "CSS", en: "CSS" }, icon: "bi-filetype-css" },
       { nome: { pt: "Python", en: "PYTHON" }, icon: "bi-filetype-py" },
       { nome: { pt: "MySQL", en: "MYSQL" }, icon: "bi-database" },
-      { nome: { pt: "MICROSOFT OFFICE", en: "MICROSOFT OFFICE" }, icon: "bi-microsoft" },
+      {
+        nome: { pt: "MICROSOFT OFFICE", en: "MICROSOFT OFFICE" },
+        icon: "bi-microsoft",
+      },
     ],
 
     // ------------------ ESPECIALIDADES ------------------
@@ -177,26 +208,26 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         titulo: { pt: "Desenvolvimento Web", en: "Web Development" },
         descricao: {
           pt: "Criação de sites e aplicações web modernas, responsivas e otimizadas para alta performance.",
-          en: "Creation of modern, responsive and high-performance web applications."
+          en: "Creation of modern, responsive and high-performance web applications.",
         },
-        icon: "bi-code-slash"
+        icon: "bi-code-slash",
       },
       {
         titulo: { pt: "Banco de Dados", en: "Databases" },
         descricao: {
           pt: "Modelagem, estruturação e integração de bancos de dados relacionais e não relacionais.",
-          en: "Modeling, structuring and integrating relational and non-relational databases."
+          en: "Modeling, structuring and integrating relational and non-relational databases.",
         },
-        icon: "bi-database"
+        icon: "bi-database",
       },
       {
         titulo: { pt: "Back-end & APIs", en: "Back-end & APIs" },
         descricao: {
           pt: "Desenvolvimento de APIs robustas e sistemas escaláveis.",
-          en: "Development of robust APIs and scalable back-end systems."
+          en: "Development of robust APIs and scalable back-end systems.",
         },
-        icon: "bi-server"
-      }
+        icon: "bi-server",
+      },
     ],
 
     // ------------------ PROJETOS ------------------
@@ -283,7 +314,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
           en: "Application to convert videos to MP3 basic and functional.",
         },
         image: "../Projects/DownYT.png",
-        git:"https://github.com/Matheus-Fernando-br/DownYT",
+        git: "https://github.com/Matheus-Fernando-br/DownYT",
       },
       {
         title: {
@@ -312,7 +343,6 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         },
         image: "../Projects/Restaurante.jpg",
         git: "https://github.com/Matheus-Fernando-br/Reserva-Restaurante",
-
       },
       {
         title: {
@@ -327,10 +357,8 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         },
         image: "../Projects/Calculadora.png",
         git: "https://github.com/Matheus-Fernando-br/Simple-Calculator-Project",
-
       },
     ],
-
 
     // ------------------ CURSOS ------------------
     cursos: [
@@ -371,8 +399,14 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
 
     // ------------------ CONQUISTAS ------------------
     minhasConquistas: [
-      { numero: 3, descricao: { pt: "Projeto Concluído", en: "Completed Project" } },
-      { numero: 2, descricao: { pt: "Anos de Experiência", en: "Years of Experience" } },
+      {
+        numero: 3,
+        descricao: { pt: "Projeto Concluído", en: "Completed Project" },
+      },
+      {
+        numero: 2,
+        descricao: { pt: "Anos de Experiência", en: "Years of Experience" },
+      },
       { numero: 3, descricao: { pt: "Certificações", en: "Certifications" } },
     ],
 
