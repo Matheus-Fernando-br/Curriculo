@@ -1,7 +1,14 @@
 import React, { useEffect, useContext } from "react";
 import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
-  LineChart, Line, CartesianGrid
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  CartesianGrid,
 } from "recharts";
 import curriculo from "../editar/curriculo";
 import { LangContext } from "../context/LangContext";
@@ -50,7 +57,7 @@ function Home({ darkMode = true }) {
   useEffect(() => {
     document.documentElement.setAttribute(
       "data-theme",
-      darkMode ? "dark" : "light"
+      darkMode ? "dark" : "light",
     );
   }, [darkMode]);
 
@@ -73,8 +80,7 @@ function Home({ darkMode = true }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="bi bi-download"></i>{" "}
-                {t[lang].curriculoDownloadPT}
+                <i className="bi bi-download"></i> {t[lang].curriculoDownloadPT}
               </a>
               <a
                 href={dados.contatos.curriculoEN}
@@ -82,8 +88,7 @@ function Home({ darkMode = true }) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <i className="bi bi-download"></i>{" "}
-                {t[lang].curriculoDownloadEN}
+                <i className="bi bi-download"></i> {t[lang].curriculoDownloadEN}
               </a>
             </div>
           </div>
@@ -101,8 +106,7 @@ function Home({ darkMode = true }) {
               <div className="competencias-tags">
                 {dados.competencias.map((comp, index) => (
                   <span key={index} className="tag">
-                    <i className={`bi ${comp.icon}`}></i>{" "}
-                    {comp.nome[lang]}
+                    <i className={`bi ${comp.icon}`}></i> {comp.nome[lang]}
                   </span>
                 ))}
               </div>
@@ -130,11 +134,7 @@ function Home({ darkMode = true }) {
               <XAxis dataKey="ano" />
               <YAxis />
               <Tooltip />
-              <Line
-                type="monotone"
-                dataKey="conquistas"
-                stroke="#0046c7"
-              />
+              <Line type="monotone" dataKey="conquistas" stroke="#0046c7" />
             </LineChart>
           </ResponsiveContainer>
         </div>
