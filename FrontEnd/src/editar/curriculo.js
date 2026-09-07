@@ -262,6 +262,20 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       },
       {
         title: {
+          pt: "Landing Page e Inscricão para retiro",
+          en: "Landing Page and Registration for Retreat",
+        },
+        link: "https://retirovoltemos.vercel.app/",
+        icon: "bi bi-arrow-through-heart-fill",
+        details: {
+          pt: "Sistema web para gestão de inscrições e pagamentos do Retiro Anual da Igreja Centro Internacional de Avivamento Primavera. Conta com fluxo de inscrição em 3 etapas para os participantes e um painel administrativo protegido para a organização.",
+          en: "Web system for managing retreat registrations and payments of the Annual Retreat of the Centro Internacional de Avivamento Primavera Church. It features a 3-step registration process for participants and a protected admin panel for the organization.",
+        },
+        image: "../Projects/retiro.png",
+        git: "https://github.com/Matheus-Fernando-br/RETIRO",
+      },
+      {
+        title: {
           pt: "Site Institucional para Igreja em REACT",
           en: "Institutional website for a church in REACT",
         },
@@ -287,6 +301,20 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         },
         image: "../Projects/casamento.png",
         git: "https://github.com/Matheus-Fernando-br/Casamento",
+      },
+      {
+        title: {
+          pt: "Inteligência Artificial - Uso Pessoal",
+          en: "Personal Artificial Intelligence",
+        },
+        link: "https://saite-agent.vercel.app/",
+        icon: "bi bi-robot",
+        details: {
+          pt: "Agente pessoal de Inteligência Artificial multiplataforma, desenvolvido inicialmente para Web e futuramente expandido para Mobile e Desktop.",
+          en: "Personal Artificial Intelligence agent for multiple platforms, initially developed for Web and later expanded for Mobile and Desktop.",
+        },
+        image: "../Projects/saite.png",
+        git: "https://github.com/Matheus-Fernando-br/S.A.I.T.E.",
       },
       {
         title: {
