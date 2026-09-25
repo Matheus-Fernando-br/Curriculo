@@ -89,7 +89,6 @@ function Contato() {
   };
 
   const contactLinks = [
-    ["bi-telephone", dados.contatos.telefone, `tel:${dados.contatos.telefone}`],
     ["bi-envelope", dados.contatos.email, `mailto:${dados.contatos.email}`],
     ["bi-whatsapp", "WhatsApp", `https://wa.me/55${dados.contatos.whatsapp}`],
     ["bi-telegram", "Telegram", dados.contatos.telegram],

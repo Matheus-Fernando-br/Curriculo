@@ -8,7 +8,7 @@ function Home() {
   const dados = curriculo();
   const copy = {
     pt: {
-      eyebrow: "Analista de TI · Desenvolvedor",
+      eyebrow: "Desenvolvedor Full Stack Júnior",
       title: "Tecnologia com clareza, impacto e cuidado nos detalhes.",
       intro: dados.textoInicialHome.pt,
       about: "Conheça minha trajetória",
@@ -22,7 +22,7 @@ function Home() {
       cta: "Falar comigo",
     },
     en: {
-      eyebrow: "IT Analyst · Developer",
+      eyebrow: "Junior Full Stack Developer",
       title: "Technology with clarity, impact and care for every detail.",
       intro: dados.textoInicialHome.en,
       about: "Explore my journey",
@@ -38,6 +38,15 @@ function Home() {
   }[lang];
   const imagePath = (path) =>
     path?.startsWith("../") ? path.replace("../", "/") : path;
+
+  // PT-BR é o padrão. Apenas quando o idioma for "en" será usado o currículo em inglês.
+  const resumePath =
+    lang === "en" ? dados.contatos.curriculoEN : dados.contatos.curriculoPT;
+
+  const resumeFileName =
+    lang === "en"
+      ? "Curriculo-Matheus-Fernando-EN-US.pdf"
+      : "Curriculo-Matheus-Fernando-PT-BR.pdf";
 
   return (
     <main
@@ -64,9 +73,9 @@ function Home() {
             </Link>
             <a
               className="button button-secondary"
-              href={dados.contatos.curriculoPT}
-              target="_blank"
-              rel="noreferrer"
+              href={resumePath}
+              download={resumeFileName}
+              aria-label={copy.resume}
             >
               <i className="bi bi-download" aria-hidden="true" /> {copy.resume}
             </a>

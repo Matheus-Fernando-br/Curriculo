@@ -14,8 +14,8 @@ function curriculo() {
     },
     mapa: "https://maps.app.goo.gl/t3nXogCsHYnPRYVFA",
     cargo: {
-      pt: "Analista de TI",
-      en: "IT Analyst",
+      pt: "Desenvolvedor Full Stack Júnior",
+      en: "Junior Full Stack Developer",
     },
     cnh: "AB",
     idioma: {
@@ -58,9 +58,11 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       { name: "React", nivel: 85 },
       { name: "Node.js", nivel: 60 },
       { name: "Python", nivel: 50 },
-      { name: "HTML", nivel: 90 },
-      { name: "CSS", nivel: 80 },
-      { name: "Git/GitHub", nivel: 70 },
+      { name: "MySQL", nivel: 40 },
+      { name: "PostgreSQL", nivel: 60 },
+      { name: "MongoDB", nivel: 20 },
+      { name: "APIREST", nivel: 30 },
+      { name: "Git", nivel: 70 },
     ],
 
     // ------------------ EXPERIÊNCIA PROFISSIONAL ------------------
