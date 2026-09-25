@@ -5,128 +5,111 @@ import { LangContext } from "../context/LangContext";
 function Sobre() {
   const dados = curriculo();
   const { lang } = useContext(LangContext);
-
-  const t = {
+  const copy = {
     pt: {
-      aboutTitle: "Sobre Mim",
-      achievements: "Minhas Conquistas",
-      idade: "Idade",
-      cnh: "CNH",
-      idioma: "Idioma",
-      regiao: "Região",
+      eyebrow: "Sobre mim",
+      title: "Construo soluções úteis e evoluo continuamente.",
+      achievements: "Conquistas",
+      specialties: "Especialidades",
+      age: "Idade",
+      license: "CNH",
+      language: "Idioma",
+      region: "Região",
       years: "anos",
-      skills: "Especialidades",
     },
     en: {
-      aboutTitle: "About Me",
-      achievements: "My Achievements",
-      idade: "Age",
-      cnh: "Driver's License",
-      idioma: "Language",
-      regiao: "Region",
+      eyebrow: "About me",
+      title: "I build useful solutions and keep evolving.",
+      achievements: "Achievements",
+      specialties: "Specialties",
+      age: "Age",
+      license: "Driver's license",
+      language: "Language",
+      region: "Region",
       years: "years",
-      skills: "Specialties",
     },
-  };
+  }[lang];
+  const info = [
+    ["bi-calendar3", copy.age, `${dados.idade} ${copy.years}`],
+    ["bi-car-front", copy.license, dados.cnh],
+    ["bi-translate", copy.language, dados.idioma[lang]],
+    ["bi-geo-alt", copy.region, dados.regiao[lang]],
+  ];
 
   return (
-    <main id="scroll-container" className="Content page-sobre">
-      <section className="cards">
-        {/* ===== PRIMEIRA SEÇÃO ===== */}
-        <div className="sobre-top">
-          {/* ESQUERDA */}
-          <div className="sobre-texto">
-            <h1>
-              <i className="bi bi-person"></i> {t[lang].aboutTitle}
-            </h1>
-
+    <main
+      className="page page-inner"
+      itemScope
+      itemType="https://schema.org/Person"
+    >
+      <section className="section-shell inner-hero">
+        <p className="eyebrow">01 · {copy.eyebrow}</p>
+        <h1>{copy.title}</h1>
+        <div className="about-layout">
+          <article className="about-copy glass-card">
             <p
-              dangerouslySetInnerHTML={{
-                __html: dados.textoSobreMim[lang],
-              }}
+              dangerouslySetInnerHTML={{ __html: dados.textoSobreMim[lang] }}
+              itemProp="description"
             />
-          </div>
-
-          {/* DIREITA */}
-          <div className="sobre-info">
+          </article>
+          <aside className="about-aside">
             <img
               src="/Images/Foto-2-Usuario.JPG"
-              alt="Foto de Perfil"
-              className="sobre-foto"
+              alt={`Foto de ${dados.nome}`}
             />
-
             <div className="info-grid">
-              <div className="info-card">
-                <h4>
-                  <i className="bi bi-calendar"></i> {t[lang].idade}
-                </h4>
-                <span>
-                  {dados.idade} {t[lang].years}
-                </span>
-              </div>
-
-              <div className="info-card">
-                <h4>
-                  <i className="bi bi-car-front"></i> {t[lang].cnh}
-                </h4>
-                <span>{dados.cnh}</span>
-              </div>
-
-              <div className="info-card">
-                <h4>
-                  <i className="bi bi-translate"></i> {t[lang].idioma}
-                </h4>
-                <span>{dados.idioma[lang]}</span>
-              </div>
-
-              <div className="info-card">
-                <a href={dados.mapa} target="_blank" rel="noreferrer">
-                <h4>
-                  <i className="bi bi-geo-alt"></i> {t[lang].regiao}
-                </h4>
-                <span>{dados.regiao[lang]}</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* ===== Especialidades ===== */}
-        <div id="especialidades" className="services">
-          <div className="container">
-              <h3>
-                <i className="bi bi-list-check"></i> {t[lang].skills}
-              </h3>
-
-            <div className="services-grid">
-              {dados.especialidades.map((item, index) => (
-                <div key={index} className="service-card">
-                  <div className="service-icon">
-                    <i className={`bi ${item.icon}`}></i>
+              {info.map(([icon, label, value]) => (
+                <div className="info-item glass-card" key={label}>
+                  <i className={`bi ${icon}`} aria-hidden="true" />
+                  <div>
+                    <span>{label}</span>
+                    <strong>{value}</strong>
                   </div>
-
-                  <h3>{item.titulo[lang]}</h3>
-                  <p>{item.descricao[lang]}</p>
                 </div>
               ))}
             </div>
-          </div>
+          </aside>
         </div>
-
-        {/* ===== ESTATÍSTICAS ===== */}
-        <div className="estatisticas">
-          <h3>
-            <i className="bi bi-trophy-fill"></i> {t[lang].achievements}
-          </h3>
-
-          <div className="estatisticas-grid">
-            {dados.minhasConquistas.map((c, index) => (
-              <div key={index} className="estat-card">
-                <strong>{c.numero}</strong>
-                <p>{c.descricao[lang]}</p>
-              </div>
-            ))}
-          </div>
+      </section>
+      <section
+        className="section-shell section-block"
+        aria-labelledby="specialties-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">
+            02 · {lang === "pt" ? "Como posso ajudar" : "How I can help"}
+          </p>
+          <h2 id="specialties-title">{copy.specialties}</h2>
+        </div>
+        <div className="specialty-grid">
+          {dados.especialidades.map((item) => (
+            <article className="specialty-card glass-card" key={item.titulo.pt}>
+              <span className="icon-badge">
+                <i className={`bi ${item.icon}`} aria-hidden="true" />
+              </span>
+              <h3>{item.titulo[lang]}</h3>
+              <p>{item.descricao[lang]}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section
+        className="section-shell section-block"
+        aria-labelledby="achievements-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">
+            03 · {lang === "pt" ? "Resultados" : "Results"}
+          </p>
+          <h2 id="achievements-title">{copy.achievements}</h2>
+        </div>
+        <div className="achievement-grid">
+          {dados.minhasConquistas.map((item) => (
+            <article className="achievement-card glass-card" key={item.numero}>
+              <strong>{item.numero}</strong>
+              <p>{item.descricao[lang]}</p>
+            </article>
+          ))}
         </div>
       </section>
     </main>

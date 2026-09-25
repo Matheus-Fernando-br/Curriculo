@@ -4,28 +4,20 @@ export default function BackToTop() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    function handleScroll() {
-      setVisible(window.scrollY > 300);
-    }
-
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => setVisible(window.scrollY > 420);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  function scrollToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  }
 
   return (
     <button
       type="button"
-      onClick={scrollToTop}
+      onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       className={`back-to-top ${visible ? "show" : ""}`}
+      aria-label="Voltar ao topo"
     >
-      <i class="bi bi-arrow-bar-up"></i>
+      <i className="bi bi-arrow-up" aria-hidden="true" />
     </button>
   );
 }

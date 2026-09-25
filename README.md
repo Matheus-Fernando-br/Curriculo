@@ -16,7 +16,7 @@ O sistema foi estruturado para ser simples de manter, escalável e seguro.
 
 Frontend → React  
 Backend → Node.js + Express  
-Integração → Telegram Bot API  
+Integração → Telegram Bot API
 
 ---
 
@@ -46,12 +46,14 @@ Usuário → Frontend → API `/api/send-message` → Telegram
 ## ⚡ Tecnologias Utilizadas
 
 ### Frontend
+
 - React
 - React Router
 - Bootstrap Icons
 - CSS Responsivo
 
 ### Backend
+
 - Node.js
 - Express
 - Axios
@@ -63,7 +65,7 @@ Usuário → Frontend → API `/api/send-message` → Telegram
 ## 🌍 Deploy
 
 Frontend: Vercel ou Netlify  
-Backend: Render, Railway, VPS ou servidor próprio  
+Backend: Render, Railway, VPS ou servidor próprio
 
 ---
 
@@ -71,4 +73,4 @@ Backend: Render, Railway, VPS ou servidor próprio
 
 **Matheus Fernando Ribeiro Martins**  
 GitHub: https://github.com/Matheus-Fernando-br  
-LinkedIn: https://www.linkedin.com/in/matheus-fernando-  
+LinkedIn: https://www.linkedin.com/in/matheus-fernando-

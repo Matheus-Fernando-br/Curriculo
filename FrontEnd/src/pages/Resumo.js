@@ -5,99 +5,126 @@ import { LangContext } from "../context/LangContext";
 function Resumo() {
   const dados = curriculo();
   const { lang } = useContext(LangContext);
-
-  const t = {
+  const copy = {
     pt: {
-      title: "Resumo",
-      education: "Formação Acadêmica",
-      courses: "Cursos",
-      experience: "Experiências Profissionais",
+      eyebrow: "Resumo profissional",
+      title: "Experiência que combina tecnologia e resolução de problemas.",
+      education: "Formação acadêmica",
+      courses: "Cursos e certificações",
+      experience: "Experiência profissional",
+      view: "Abrir referência",
     },
     en: {
-      title: "Summary",
-      education: "Academic Training",
-      courses: "Courses",
-      experience: "Professional Experience",
+      eyebrow: "Professional summary",
+      title: "Experience combining technology and problem solving.",
+      education: "Academic background",
+      courses: "Courses and certifications",
+      experience: "Professional experience",
+      view: "Open reference",
     },
-  };
-
+  }[lang];
   return (
-    <main className="Content page-resumo">
-      <section className="cards resumo-container">
-        <header className="resumo-header">
-          <h1 className="Title-Pag">
-            <i className="bi bi-journal-text"></i> {t[lang].title}
-          </h1>
-        </header>
-
-        {/* EDUCAÇÃO */}
-        <section className="resumo-section">
-          <h3>
-            <i className="bi bi-mortarboard"></i> {t[lang].education}
-          </h3>
-
-          <div className="grid-cards">
-            {dados.educacao.map((edu, index) => (
-              <div key={index} className="card">
-                <a href={edu.link} target="_blank" rel="noreferrer">
-                  <div className="card-header">
-                    <i className="bi bi-mortarboard"></i>
-                    <h4>{edu.instituicao}</h4>
-                  </div>
-                  <span className="periodo">{edu.periodo[lang]}</span>
-                  <p>{edu.curso[lang]}</p>
+    <main className="page page-inner">
+      <section className="section-shell inner-hero">
+        <p className="eyebrow">01 · {copy.eyebrow}</p>
+        <h1>{copy.title}</h1>
+      </section>
+      <section
+        className="section-shell resume-section"
+        aria-labelledby="education-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">02 · Formação</p>
+          <h2 id="education-title">{copy.education}</h2>
+        </div>
+        <div className="resume-list">
+          {dados.educacao.map((item) => (
+            <article className="resume-item glass-card" key={item.instituicao}>
+              <span className="timeline-dot" />
+              <div>
+                <div className="resume-item-top">
+                  <h3>{item.curso[lang]}</h3>
+                  <span>{item.periodo[lang]}</span>
+                </div>
+                <p>{item.instituicao}</p>
+                <a
+                  className="text-link"
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {copy.view}{" "}
+                  <i className="bi bi-arrow-up-right" aria-hidden="true" />
                 </a>
               </div>
-            ))}
-          </div>
-        </section>
-
-        {/* CURSOS */}
-        <section className="resumo-section">
-          <h3>
-            <i className="bi bi-award"></i> {t[lang].courses}
-          </h3>
-
-          <div className="grid-cards">
-            {dados.cursos.map((curso, index) => (
-              <div key={index} className="card">
-                <a href={curso.link} target="_blank" rel="noreferrer">
-                <div className="card-header-inline">
-                  <i className={`bi ${curso.icon}`}></i>
-                  <h4>{curso.title[lang]}</h4>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section
+        className="section-shell resume-section"
+        aria-labelledby="courses-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">03 · Aprendizado contínuo</p>
+          <h2 id="courses-title">{copy.courses}</h2>
+        </div>
+        <div className="resume-grid">
+          {dados.cursos.map((item) => (
+            <article className="resume-card glass-card" key={item.title.pt}>
+              <span className="icon-badge">
+                <i className={`bi ${item.icon}`} aria-hidden="true" />
+              </span>
+              <h3>{item.title[lang]}</h3>
+              <p>{item.text[lang]}</p>
+              <a
+                className="text-link"
+                href={item.link}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {copy.view}{" "}
+                <i className="bi bi-arrow-up-right" aria-hidden="true" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </section>
+      <section
+        className="section-shell resume-section"
+        aria-labelledby="experience-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">04 · Trajetória</p>
+          <h2 id="experience-title">{copy.experience}</h2>
+        </div>
+        <div className="resume-list">
+          {dados.experiencia.map((item) => (
+            <article className="resume-item glass-card" key={item.empresa}>
+              <span className="timeline-dot" />
+              <div>
+                <div className="resume-item-top">
+                  <h3>{item.empresa}</h3>
+                  <span>{item.periodo[lang]}</span>
                 </div>
-                <p>{curso.text[lang]}</p>
-                </a>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* EXPERIÊNCIA */}
-        <section className="resumo-section">
-          <h3>
-            <i className="bi bi-briefcase"></i> {t[lang].experience}
-          </h3>
-
-          <div className="grid-cards">
-            {dados.experiencia.map((exp, index) => (
-              <div key={index} className="card experiencia-card">
-                <a href={exp.link} target="_blank" rel="noreferrer">
-                <div className="card-header">
-                  <i className="bi bi-building"></i>
-                  <h4>{exp.empresa}</h4>
-                </div>
-                <span className="periodo">{exp.periodo[lang]}</span>
                 <ul>
-                  {exp.descricao[lang].map((item, i) => (
-                    <li key={i}>{item}</li>
+                  {item.descricao[lang].map((line) => (
+                    <li key={line}>{line}</li>
                   ))}
                 </ul>
+                <a
+                  className="text-link"
+                  href={item.link}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {copy.view}{" "}
+                  <i className="bi bi-arrow-up-right" aria-hidden="true" />
                 </a>
               </div>
-            ))}
-          </div>
-        </section>
+            </article>
+          ))}
+        </div>
       </section>
     </main>
   );

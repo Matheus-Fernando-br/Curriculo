@@ -1,181 +1,225 @@
-import React, { useEffect, useContext } from "react";
-import {
-  BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer,
-  LineChart, Line, CartesianGrid
-} from "recharts";
-import curriculo from "../editar/curriculo";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { LangContext } from "../context/LangContext";
+import curriculo from "../editar/curriculo";
 
-function Home({ darkMode = true }) {
+function Home() {
   const { lang } = useContext(LangContext);
   const dados = curriculo();
-
-  const t = {
+  const copy = {
     pt: {
-      homeTitle: "Bem-vindo ao meu perfil!",
-      hardSkills: "Minhas Habilidades",
-      profEvol: "Evolução Profissional",
-      featuredProjects: "Projetos em Destaque",
-      testimonials: "O que dizem sobre mim",
-      curriculoDownloadPT: "Baixar Currículo em PT-BR",
-      curriculoDownloadEN: "Baixar Currículo em EN-US",
-      titleFinal: "Pronto para colaborar?",
-      msgFinal:
-        "Estou sempre aberto a discutir novos projetos, ideias criativas ou oportunidades para fazer parte de sua visão.",
-      btnFinal: "Entre em Contato",
+      eyebrow: "Analista de TI · Desenvolvedor",
+      title: "Tecnologia com clareza, impacto e cuidado nos detalhes.",
+      intro: dados.textoInicialHome.pt,
+      about: "Conheça minha trajetória",
+      resume: "Baixar currículo",
+      skills: "Competências principais",
+      projects: "Projetos em destaque",
+      testimonials: "Recomendações",
+      ctaTitle: "Vamos construir algo relevante?",
+      ctaText:
+        "Estou aberto a projetos, desafios técnicos e oportunidades de colaboração.",
+      cta: "Falar comigo",
     },
     en: {
-      homeTitle: "Welcome to my profile!",
-      hardSkills: "My Hard Skills",
-      profEvol: "Professional Evolution",
-      featuredProjects: "Featured Projects",
-      testimonials: "What they say about me",
-      curriculoDownloadPT: "Download Resume in PT-BR",
-      curriculoDownloadEN: "Download Resume in EN-US",
-      titleFinal: "Ready to collaborate?",
-      msgFinal:
-        "I am always open to discussing new projects, creative ideas, or opportunities to be part of your vision.",
-      btnFinal: "Contact Me",
+      eyebrow: "IT Analyst · Developer",
+      title: "Technology with clarity, impact and care for every detail.",
+      intro: dados.textoInicialHome.en,
+      about: "Explore my journey",
+      resume: "Download resume",
+      skills: "Core competencies",
+      projects: "Featured projects",
+      testimonials: "Recommendations",
+      ctaTitle: "Shall we build something meaningful?",
+      ctaText:
+        "I am open to projects, technical challenges and collaboration opportunities.",
+      cta: "Get in touch",
     },
-  };
-
-  const experiencia = [
-    { ano: "2021", conquistas: 1 },
-    { ano: "2022", conquistas: 1.5 },
-    { ano: "2023", conquistas: 3 },
-    { ano: "2024", conquistas: 6 },
-    { ano: "2025", conquistas: 9 },
-  ];
-
-  useEffect(() => {
-    document.documentElement.setAttribute(
-      "data-theme",
-      darkMode ? "dark" : "light"
-    );
-  }, [darkMode]);
+  }[lang];
+  const imagePath = (path) =>
+    path?.startsWith("../") ? path.replace("../", "/") : path;
 
   return (
-    <main className={`Content page-home ${darkMode ? "dark" : "light"}`}>
-      <section className="cards">
-        <div className="Welcome-card">
-          {/* LADO ESQUERDO */}
-          <div className="lado-esquerdo">
-            <h2 className="Welcome">
-              <i className="bi bi-house-door"></i> {t[lang].homeTitle}
-            </h2>
-            <h1>{dados.nome}</h1>
-            <p>{dados.textoInicialHome[lang]}</p>
-
-            <div className="btns-download">
-              <a
-                href={dados.contatos.curriculoPT}
-                className="btn-download"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bi bi-download"></i>{" "}
-                {t[lang].curriculoDownloadPT}
-              </a>
-              <a
-                href={dados.contatos.curriculoEN}
-                className="btn-download curriculo-en"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="bi bi-download"></i>{" "}
-                {t[lang].curriculoDownloadEN}
-              </a>
-            </div>
+    <main
+      className="page page-home"
+      itemScope
+      itemType="https://schema.org/Person"
+    >
+      <section className="hero section-shell" aria-labelledby="home-title">
+        <div className="hero-copy">
+          <p className="eyebrow">
+            <span className="status-dot" /> {copy.eyebrow}
+          </p>
+          <h1 id="home-title" itemProp="name">
+            {dados.nome}
+          </h1>
+          <h2>{copy.title}</h2>
+          <p className="hero-intro" itemProp="description">
+            {copy.intro}
+          </p>
+          <div className="hero-actions">
+            <Link className="button button-primary" to="/sobre">
+              {copy.about}{" "}
+              <i className="bi bi-arrow-up-right" aria-hidden="true" />
+            </Link>
+            <a
+              className="button button-secondary"
+              href={dados.contatos.curriculoPT}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <i className="bi bi-download" aria-hidden="true" /> {copy.resume}
+            </a>
           </div>
-
-          {/* LADO DIREITO */}
-          <div className="lado-direito">
-            <div className="foto-container">
-              <img src="/Images/Foto-Usuario.jpg" alt="Foto de Perfil" />
-            </div>
-            <h2>{dados.cargo[lang]}</h2>
-            <h4>
-              {dados.cidade} - {dados.estado}
-            </h4>
-            <div className="competencias">
-              <div className="competencias-tags">
-                {dados.competencias.map((comp, index) => (
-                  <span key={index} className="tag">
-                    <i className={`bi ${comp.icon}`}></i>{" "}
-                    {comp.nome[lang]}
-                  </span>
-                ))}
-              </div>
-            </div>
+          <div
+            className="hero-meta"
+            aria-label={
+              lang === "pt"
+                ? "Informações profissionais"
+                : "Professional information"
+            }
+          >
+            <span>
+              <i className="bi bi-geo-alt" aria-hidden="true" />{" "}
+              {dados.regiao[lang]}
+            </span>
+            <span>
+              <i className="bi bi-briefcase" aria-hidden="true" />{" "}
+              {dados.cargo[lang]}
+            </span>
           </div>
         </div>
-
-        <div className="grafico-container">
-          <h3>{t[lang].hardSkills}</h3>
-          <ResponsiveContainer width="100%" height={250}>
-            <BarChart data={dados.habilidades}>
-              <XAxis dataKey="name" />
-              <YAxis />
-              <Tooltip />
-              <Bar dataKey="nivel" fill="#00c3ff" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="grafico-container">
-          <h3>{t[lang].profEvol}</h3>
-          <ResponsiveContainer width="100%" height={250}>
-            <LineChart data={experiencia}>
-              <CartesianGrid strokeDasharray="3 3" />
-              <XAxis dataKey="ano" />
-              <YAxis />
-              <Tooltip />
-              <Line
-                type="monotone"
-                dataKey="conquistas"
-                stroke="#0046c7"
-              />
-            </LineChart>
-          </ResponsiveContainer>
-        </div>
-
-        <div className="destaques">
-          <h3>{t[lang].featuredProjects}</h3>
-          <div className="projetos-grid">
-            {dados.projetos.slice(0, 3).map((p, index) => (
-              <a
-                key={index}
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="projeto-card"
-              >
-                <i className={`bi ${p.icon}`}></i> {p.title[lang]}
-              </a>
+        <aside
+          className="hero-profile glass-card"
+          aria-label={
+            lang === "pt" ? "Perfil profissional" : "Professional profile"
+          }
+        >
+          <div className="profile-image-wrap">
+            <img
+              src="/Images/Foto-Usuario.jpg"
+              alt={`Retrato profissional de ${dados.nome}`}
+              itemProp="image"
+            />
+          </div>
+          <p className="profile-label">
+            {lang === "pt"
+              ? "Disponível para oportunidades"
+              : "Available for opportunities"}
+          </p>
+          <h3>{dados.cargo[lang]}</h3>
+          <div className="profile-tags">
+            {dados.competencias.slice(0, 4).map((skill) => (
+              <span key={skill.nome.pt}>{skill.nome[lang]}</span>
             ))}
           </div>
-        </div>
+        </aside>
+      </section>
 
-        <div className="testemunhos">
-          <h3>{t[lang].testimonials}</h3>
-          {dados.oqueDizemSobreMim[lang].map((texto, index) => (
-            <blockquote key={index}>
-              <span className="Cor-Primaria">"</span> {texto}{" "}
-              <span className="Cor-Primaria">"</span>
+      <section
+        className="section-shell section-block"
+        aria-labelledby="skills-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">
+            01 · {lang === "pt" ? "Especialização" : "Expertise"}
+          </p>
+          <h2 id="skills-title">{copy.skills}</h2>
+        </div>
+        <div className="skill-grid">
+          {dados.habilidades.map((skill) => (
+            <article className="skill-card glass-card" key={skill.name}>
+              <div className="skill-card-top">
+                <span>{skill.name}</span>
+                <strong>{skill.nivel}%</strong>
+              </div>
+              <div
+                className="skill-track"
+                aria-label={`${skill.name}: ${skill.nivel}%`}
+              >
+                <span style={{ width: `${skill.nivel}%` }} />
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="section-shell section-block"
+        aria-labelledby="projects-title"
+      >
+        <div className="section-heading section-heading-row">
+          <div>
+            <p className="eyebrow">
+              02 · {lang === "pt" ? "Seleção" : "Selection"}
+            </p>
+            <h2 id="projects-title">{copy.projects}</h2>
+          </div>
+          <Link className="text-link" to="/projeto">
+            {lang === "pt" ? "Ver todos" : "View all"}{" "}
+            <i className="bi bi-arrow-up-right" aria-hidden="true" />
+          </Link>
+        </div>
+        <div className="featured-grid">
+          {dados.projetos.slice(0, 3).map((project) => (
+            <a
+              className="featured-project glass-card"
+              href={project.link}
+              target="_blank"
+              rel="noreferrer"
+              key={project.title.pt}
+            >
+              <img src={imagePath(project.image)} alt={project.title[lang]} />
+              <div className="featured-project-content">
+                <span>{project.title[lang]}</span>
+                <i className="bi bi-arrow-up-right" aria-hidden="true" />
+              </div>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section
+        className="section-shell section-block"
+        aria-labelledby="testimonials-title"
+      >
+        <div className="section-heading">
+          <p className="eyebrow">
+            03 · {lang === "pt" ? "Confiança" : "Trust"}
+          </p>
+          <h2 id="testimonials-title">{copy.testimonials}</h2>
+        </div>
+        <div className="testimonial-grid">
+          {dados.oqueDizemSobreMim[lang].map((quote, index) => (
+            <blockquote className="quote-card glass-card" key={index}>
+              <i className="bi bi-quote" aria-hidden="true" />
+              <p>{quote}</p>
             </blockquote>
           ))}
         </div>
-
-        <div className="espaco-final">
-          <h2>{t[lang].titleFinal}</h2>
-          <p>{t[lang].msgFinal}</p>
-          <div className="btns-download">
-            <a href="/contato" className="btn-download">
-              <i className="bi bi-envelope"></i> {t[lang].btnFinal}
-            </a>
-          </div>
-        </div>
       </section>
+
+      <section
+        className="section-shell cta-section"
+        aria-labelledby="cta-title"
+      >
+        <div>
+          <p className="eyebrow">
+            04 · {lang === "pt" ? "Próximo passo" : "Next step"}
+          </p>
+          <h2 id="cta-title">{copy.ctaTitle}</h2>
+          <p>{copy.ctaText}</p>
+        </div>
+        <Link className="button button-primary" to="/contato">
+          {copy.cta} <i className="bi bi-arrow-up-right" aria-hidden="true" />
+        </Link>
+      </section>
+      <footer className="site-footer section-shell">
+        <span>
+          © {new Date().getFullYear()} {dados.nome}
+        </span>
+        <span>{dados.cargo[lang]}</span>
+      </footer>
     </main>
   );
 }

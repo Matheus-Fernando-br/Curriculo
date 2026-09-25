@@ -1,192 +1,189 @@
-import React, { useState, useEffect,useRef, useContext } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import 'bootstrap-icons/font/bootstrap-icons.css';
+import "bootstrap-icons/font/bootstrap-icons.css";
 import curriculo from "../editar/curriculo";
-import {LangContext} from "../context/LangContext";
+import { LangContext } from "../context/LangContext";
 
 function Header() {
   const dados = curriculo();
+  const { lang, toggleLang } = useContext(LangContext);
+  const location = useLocation();
   const [menuOpen, setMenuOpen] = useState(false);
-  const [darkMode, setDarkMode] = useState(true);
+  const [darkMode, setDarkMode] = useState(() => {
+    const storedTheme = window.localStorage.getItem("portfolio-theme");
+    return storedTheme ? storedTheme === "dark" : true;
+  });
+  const menuRef = useRef(null);
+  const toggleRef = useRef(null);
 
-  const getNomeInfo = (nome = "") => {
-    const partes = nome.trim().split(" ").filter(Boolean);
-    return {
-      primeiroNome: partes[0] || "",
-      iniciais: partes.slice(0, 2).map(p => p[0]).join("").toUpperCase()
-    };
-  };
+  const labels = {
+    pt: {
+      home: "Início",
+      about: "Sobre mim",
+      resume: "Resumo",
+      projects: "Projetos",
+      contact: "Contato",
+      theme: "Alternar tema",
+      language: "Alternar idioma",
+      open: "Abrir menu",
+      close: "Fechar menu",
+    },
+    en: {
+      home: "Home",
+      about: "About me",
+      resume: "Summary",
+      projects: "Projects",
+      contact: "Contact",
+      theme: "Toggle theme",
+      language: "Change language",
+      open: "Open menu",
+      close: "Close menu",
+    },
+  }[lang];
 
-  const { primeiroNome, iniciais } = getNomeInfo(dados.nome);
+  const firstName = dados.nome.split(" ")[0];
+  const initials = dados.nome
+    .split(" ")
+    .slice(0, 2)
+    .map((part) => part[0])
+    .join("")
+    .toUpperCase();
+  const links = [
+    ["/", labels.home],
+    ["/sobre", labels.about],
+    ["/resumo", labels.resume],
+    ["/projeto", labels.projects],
+    ["/contato", labels.contact],
+  ];
 
   useEffect(() => {
     document.documentElement.setAttribute(
       "data-theme",
-      darkMode ? "dark" : "light"
+      darkMode ? "dark" : "light",
     );
+    window.localStorage.setItem("portfolio-theme", darkMode ? "dark" : "light");
   }, [darkMode]);
 
-  const { lang, toggleLang } = useContext(LangContext);
-
-  const t = {
-    pt: { home: "Início", about: "Sobre Mim", resume: "Resumo", projects: "Projetos", contact: "Contato" },
-    en: { home: "Home", about: "About Me", resume: "Summary", projects: "Projects", contact: "Contact" }
-  };
-
-  const menuRef = useRef(null);
-  const toggleRef = useRef(null);
-
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const closeOnOutsideClick = (event) => {
       if (
         menuOpen &&
         menuRef.current &&
         !menuRef.current.contains(event.target) &&
-        toggleRef.current &&
-        !toggleRef.current.contains(event.target)
+        !toggleRef.current?.contains(event.target)
       ) {
         setMenuOpen(false);
       }
     };
-
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    document.addEventListener("mousedown", closeOnOutsideClick);
+    return () => document.removeEventListener("mousedown", closeOnOutsideClick);
   }, [menuOpen]);
 
-  const location = useLocation();
-
-  const isActive = (path) => location.pathname === path;
-
-
+  const closeMenu = () => setMenuOpen(false);
 
   return (
-    <header className="header" id="scroll-container">
-
-      {/* DESKTOP LEFT */}
-      <div className="header-left">
-        <div className="avatar">{iniciais}</div>
-        <h2>{primeiroNome}</h2>
-      </div>
-
-      {/* DESKTOP CENTER */}
-      <nav className="header-center">
-        <ul>
-          <li className={isActive("/") ? "active" : ""}>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              {t[lang].home}
-            </Link>
-          </li>
-          <li className={isActive("/sobre") ? "active" : ""}>
-            <Link to="/sobre" onClick={() => setMenuOpen(false)}>
-              {t[lang].about}
-            </Link>
-          </li>
-          <li className={isActive("/resumo") ? "active" : ""}>
-            <Link to="/resumo" onClick={() => setMenuOpen(false)}>
-              {t[lang].resume}
-            </Link>
-          </li>
-          <li className={isActive("/projeto") ? "active" : ""}>
-            <Link to="/projeto" onClick={() => setMenuOpen(false)}>
-              {t[lang].projects}
-            </Link>
-          </li>
-          <li className={isActive("/contato") ? "active" : ""}>
-            <Link to="/contato" onClick={() => setMenuOpen(false)}>
-              {t[lang].contact}
-            </Link>
-          </li>
-        </ul>
-
-      </nav>
-
-      {/* DESKTOP RIGHT */}
-      <div className="header-right">
-        <div className="tooltip-header">
-          <button className="icon-btn" onClick={toggleLang}>
-            <i className="bi bi-globe"></i> {lang.toUpperCase()}
-          </button>
-          <span className="tooltip-text-header">
-            Alterar idioma
+    <header className="site-header">
+      <div className="header-inner">
+        <Link
+          className="brand"
+          to="/"
+          onClick={closeMenu}
+          aria-label={`${dados.nome} — ${labels.home}`}
+        >
+          <span className="brand-mark" aria-hidden="true">
+            {initials}
           </span>
-        </div>
+          <span className="brand-name">{firstName}</span>
+        </Link>
 
-        <div className="tooltip-header">
+        <nav
+          className="desktop-nav"
+          aria-label={lang === "pt" ? "Navegação principal" : "Main navigation"}
+        >
+          {links.map(([path, label]) => (
+            <Link
+              key={path}
+              className={location.pathname === path ? "is-active" : ""}
+              to={path}
+            >
+              {label}
+            </Link>
+          ))}
+        </nav>
+
+        <div className="header-actions">
           <button
-            className="icon-btn lightbtn"
-            onClick={() => setDarkMode(!darkMode)}
+            className="icon-button"
+            type="button"
+            onClick={toggleLang}
+            aria-label={labels.language}
+            title={labels.language}
           >
-            <i className={`bi ${darkMode ? "bi-brightness-low-fill" : "bi-moon-fill"}`}></i>
+            <i className="bi bi-globe2" aria-hidden="true" />
+            <span>{lang.toUpperCase()}</span>
           </button>
-          <span className="tooltip-text-header">
-            Alterar Tema
-          </span>
+          <button
+            className="icon-button icon-only"
+            type="button"
+            onClick={() => setDarkMode((current) => !current)}
+            aria-label={labels.theme}
+            title={labels.theme}
+          >
+            <i
+              className={`bi ${darkMode ? "bi-sun" : "bi-moon-stars"}`}
+              aria-hidden="true"
+            />
+          </button>
+          <button
+            ref={toggleRef}
+            className={`menu-toggle ${menuOpen ? "is-open" : ""}`}
+            type="button"
+            onClick={() => setMenuOpen((current) => !current)}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            aria-label={menuOpen ? labels.close : labels.open}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
         </div>
       </div>
 
-      {/* HAMBURGER */}
-      <div
-        ref={toggleRef}
-        className={`mobile-menu-toggle ${menuOpen ? "open" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
-
-      {/* MOBILE MENU */}
-      <div
+      <nav
         ref={menuRef}
-        className={`mobile-menu ${menuOpen ? "open" : ""}`}
+        id="mobile-navigation"
+        className={`mobile-nav ${menuOpen ? "is-open" : ""}`}
+        aria-label={lang === "pt" ? "Navegação móvel" : "Mobile navigation"}
       >
-
-        {/* Nav links */}
-        <ul>
-          <li className={isActive("/") ? "active" : ""}>
-            <Link to="/" onClick={() => setMenuOpen(false)}>
-              {t[lang].home}
-            </Link>
-          </li>
-          <li className={isActive("/sobre") ? "active" : ""}>
-            <Link to="/sobre" onClick={() => setMenuOpen(false)}>
-              {t[lang].about}
-            </Link>
-          </li>
-          <li className={isActive("/resumo") ? "active" : ""}>
-            <Link to="/resumo" onClick={() => setMenuOpen(false)}>
-              {t[lang].resume}
-            </Link>
-          </li>
-          <li className={isActive("/projeto") ? "active" : ""}>
-            <Link to="/projeto" onClick={() => setMenuOpen(false)}>
-              {t[lang].projects}
-            </Link>
-          </li>
-          <li className={isActive("/contato") ? "active" : ""}>
-            <Link to="/contato" onClick={() => setMenuOpen(false)}>
-              {t[lang].contact}
-            </Link>
-          </li>
-        </ul>
-
-        {/* Botões direito */}
-        <div className="header-right">
-          <button className="icon-btn" onClick={toggleLang}>
-            <i className="bi bi-globe"></i>
+        {links.map(([path, label]) => (
+          <Link
+            key={path}
+            className={location.pathname === path ? "is-active" : ""}
+            to={path}
+            onClick={closeMenu}
+          >
+            {label}
+          </Link>
+        ))}
+        <div className="mobile-actions">
+          <button className="icon-button" type="button" onClick={toggleLang}>
+            <i className="bi bi-globe2" aria-hidden="true" />{" "}
+            {lang.toUpperCase()}
           </button>
-
-          <button className="icon-btn" onClick={() => setDarkMode(!darkMode)}>
-            <i className={`bi ${darkMode ? "bi-brightness-low-fill" : "bi-moon-fill"}`}></i>
+          <button
+            className="icon-button"
+            type="button"
+            onClick={() => setDarkMode((current) => !current)}
+          >
+            <i
+              className={`bi ${darkMode ? "bi-sun" : "bi-moon-stars"}`}
+              aria-hidden="true"
+            />{" "}
+            {labels.theme}
           </button>
         </div>
-      </div>
-
-
+      </nav>
     </header>
   );
 }
