@@ -54,7 +54,7 @@ function Sobre() {
           </article>
           <aside className="about-aside">
             <img
-              src="/Images/Foto-2-Usuario.JPG"
+              src="/Images/Foto-2-Usuario.jpeg"
               alt={`Foto de ${dados.nome}`}
             />
             <div className="info-grid">

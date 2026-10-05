@@ -410,6 +410,33 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       {
         icon: "bi-book",
         title: {
+          pt: "IA NA PRÁTICA PARA PEQUENOS NEGÓCIOS",
+          en: "AI in Practice for Small Businesses",
+        },
+        text: { pt: "SEBRAE", en: "SEBRAE" },
+        link: "https://drive.google.com/file/d/1o_smmK4-n2mNSnQ0N9Q9GWsiAuA1g7DM/view?usp=sharing",
+      },
+      {
+        icon: "bi-book",
+        title: {
+          pt: "IA PARA GESTÃO DO PEQUENO EMPREENDEDOR - MARKETING DIGITAL",
+          en: "AI for Small Business Management – ​​Digital Marketing",
+        },
+        text: { pt: "SEBRAE", en: "SEBRAE" },
+        link: "https://drive.google.com/file/d/1I4ZUI1Qfxeky6rafWnT6fuR9C1c470sY/view?usp=sharing",
+      },
+      {
+        icon: "bi-book",
+        title: {
+          pt: "IA PARA GESTÃO DO PEQUENO EMPREENDEDOR - COMO MONTAR MEU NEGOCIO COM IA",
+          en: "AI for Small Business Management – ​​How to Set Up My Business Using AI",
+        },
+        text: { pt: "SEBRAE", en: "SEBRAE" },
+        link: "https://drive.google.com/file/d/1Sjjp6tHKD8Sd9BVh61YfIRNLSvjKdNgu/view?usp=sharing",
+      },
+      {
+        icon: "bi-book",
+        title: {
           pt: "A liderança na gestão de equipes",
           en: "Leadership in Team Management",
         },
@@ -437,7 +464,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         numero: 2,
         descricao: { pt: "Anos de Experiência", en: "Years of Experience" },
       },
-      { numero: 3, descricao: { pt: "Certificações", en: "Certifications" } },
+      { numero: 6, descricao: { pt: "Certificações", en: "Certifications" } },
     ],
 
     // ------------------ O QUE DIZEM SOBRE MIM ------------------
