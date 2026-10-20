@@ -68,6 +68,28 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
     // ------------------ EXPERIÊNCIA PROFISSIONAL ------------------
     experiencia: [
       {
+        empresa: "Dev Zone (Fundador)",
+        periodo: {
+          pt: "Out/2026 – Presente",
+          en: "Oct/2026 – Present",
+        },
+        descricao: {
+          pt: [
+            "Fundador da Dev Zone, iniciativa própria de desenvolvimento de software.",
+            "Criação de sites, sistemas web, plataformas SaaS, APIs e aplicativos, do escopo ao deploy em produção.",
+            "Atendimento direto ao cliente: levantamento de requisitos, orçamento e acompanhamento das entregas.",
+            "Site institucional em Next.js e TypeScript, com API própria em Node.js/Express integrada ao Telegram.",
+          ],
+          en: [
+            "Founder of Dev Zone, my own software development initiative.",
+            "Building websites, web systems, SaaS platforms, APIs and apps, from scoping to production deployment.",
+            "Direct client relationship: requirements gathering, quotes and delivery follow-up.",
+            "Company website built with Next.js and TypeScript, with its own Node.js/Express API integrated with Telegram.",
+          ],
+        },
+        link: "https://devzonedigital.vercel.app/",
+      },
+      {
         empresa: "Baja Unileste",
         periodo: {
           pt: "Abr/2026 – Presente",
@@ -196,6 +218,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         icon: "bi-phone",
       },
       { nome: { pt: "TypeScript", en: "TYPESCRIPT" }, icon: "bi-filetype-tsx" },
+      { nome: { pt: "Next.js", en: "NEXT.JS" }, icon: "bi-lightning-charge" },
       {
         nome: { pt: "Node.Js/Express", en: "NODE.JS/EXPRESS" },
         icon: "bi-diagram-3",
@@ -254,6 +277,20 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         },
         image: "../Projects/Obra Facil.png",
         git: "https://github.com/Matheus-Fernando-br/OBRA-FACIL",
+      },
+      {
+        title: {
+          pt: "Dev Zone - Minha Empresa de Tecnologia",
+          en: "Dev Zone - My Technology Company",
+        },
+        link: "https://devzonedigital.vercel.app/",
+        icon: "bi-buildings",
+        details: {
+          pt: "Site da Dev Zone, iniciativa que criei para oferecer desenvolvimento de sites, sistemas web, SaaS, APIs e aplicativos. Apresenta serviços, processo de trabalho e projetos reais, com formulário de contato entregue no Telegram. Feito em Next.js, React e TypeScript, com API em Node.js/Express.",
+          en: "Website for Dev Zone, the initiative I created to offer development of websites, web systems, SaaS, APIs and apps. It presents services, work process and real projects, with a contact form delivered to Telegram. Built with Next.js, React and TypeScript, with a Node.js/Express API.",
+        },
+        image: "../Projects/Dev Zone.png",
+        git: "https://github.com/Matheus-Fernando-br/DEV-ZONE",
       },
       {
         title: {
