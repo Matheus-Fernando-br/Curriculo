@@ -554,7 +554,6 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
     // ------------------ CONTATOS ------------------
     contatos: {
       telefone: "31986763652",
-      whatsapp: "31986763652",
       email: "matheus1030br@gmail.com",
       linkedin: "https://www.linkedin.com/in/matheus-ribeiro-7b4a9822b/",
       github: "https://github.com/Matheus-Fernando-br",
