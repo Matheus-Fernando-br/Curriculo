@@ -192,6 +192,11 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       { nome: { pt: "JavaScript", en: "JAVASCRIPT" }, icon: "bi-braces" },
       { nome: { pt: "React", en: "REACT" }, icon: "bi-lightbulb" },
       {
+        nome: { pt: "React Native", en: "REACT NATIVE" },
+        icon: "bi-phone",
+      },
+      { nome: { pt: "TypeScript", en: "TYPESCRIPT" }, icon: "bi-filetype-tsx" },
+      {
         nome: { pt: "Node.Js/Express", en: "NODE.JS/EXPRESS" },
         icon: "bi-diagram-3",
       },
@@ -236,6 +241,20 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
 
     // ------------------ PROJETOS ------------------
     projetos: [
+      {
+        title: {
+          pt: "Obra Fácil - App de Gestão de Obras",
+          en: "Obra Fácil - Construction Management App",
+        },
+        link: "https://matheus-fernando-br.github.io/OBRA-FACIL/",
+        icon: "bi-phone",
+        details: {
+          pt: "Aplicativo mobile para profissionais da construção civil: cadastro de clientes, orçamentos por etapas com cálculo de BDI, geração de PDF para o cliente, controle de obras com progresso e status, painel com indicadores, relatórios e desbloqueio por biometria. Feito em React Native com Expo e TypeScript.",
+          en: "Mobile app for construction professionals: client management, stage-based quotes with BDI calculation, PDF generation for clients, project tracking with progress and status, dashboard with indicators, reports and biometric unlock. Built with React Native, Expo and TypeScript.",
+        },
+        image: "../Projects/Obra Facil.png",
+        git: "https://github.com/Matheus-Fernando-br/OBRA-FACIL",
+      },
       {
         title: {
           pt: "Sistema de Emissão de Notas em REACT",
