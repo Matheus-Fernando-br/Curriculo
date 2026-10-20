@@ -198,6 +198,8 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       { nome: { pt: "CSS", en: "CSS" }, icon: "bi-filetype-css" },
       { nome: { pt: "Python", en: "PYTHON" }, icon: "bi-filetype-py" },
       { nome: { pt: "MySQL", en: "MYSQL" }, icon: "bi-database" },
+      { nome: { pt: "Java", en: "JAVA" }, icon: "bi-cup-hot" },
+      { nome: { pt: "Git/GitHub", en: "GIT/GITHUB" }, icon: "bi-github" },
       {
         nome: { pt: "MICROSOFT OFFICE", en: "MICROSOFT OFFICE" },
         icon: "bi-microsoft",
@@ -256,11 +258,25 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         link: "https://geradorcurriculoonline.vercel.app",
         icon: "bi-file-earmark-break",
         details: {
-          pt: "Sistema gratuito que gera currículo formatado.",
-          en: "Free system that generates a formatted resume.",
+          pt: "Plataforma gratuita para criar currículos profissionais em PDF direto no navegador, com formulário dinâmico, pré-visualização em tempo real e interface redesenhada no estilo Apple.",
+          en: "Free platform to create professional PDF resumes right in the browser, with a dynamic form, real-time preview and an Apple-style redesigned interface.",
         },
         image: "../Projects/Gerador de Currículo Online.png",
         git: "https://github.com/Matheus-Fernando-br/Gerador-de-Curriculo-Online",
+      },
+      {
+        title: {
+          pt: "Cifras JC - Site de Cifras Gospel",
+          en: "Cifras JC - Gospel Chords Website",
+        },
+        link: "https://cifrasjc.vercel.app/",
+        icon: "bi-music-note-beamed",
+        details: {
+          pt: "Site de cifras das músicas de Jonathan César no estilo Cifra Club, com transposição automática de tom, rolagem automática, player de áudio, busca, filtros por categoria e tom e modo escuro. Feito em React com Vite.",
+          en: "Chords website for Jonathan César's songs in Cifra Club style, with automatic key transposition, auto-scroll, audio player, search, category and key filters, and dark mode. Built with React and Vite.",
+        },
+        image: "../Projects/Cifras JC.png",
+        git: "https://github.com/Matheus-Fernando-br/CIFRAS-JC",
       },
       {
         title: {
