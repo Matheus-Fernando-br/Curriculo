@@ -492,7 +492,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
     // ------------------ CONQUISTAS ------------------
     minhasConquistas: [
       {
-        numero: 3,
+        numero: 4,
         descricao: { pt: "Projeto Concluído", en: "Completed Project" },
       },
       {
