@@ -367,14 +367,14 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       },
       {
         title: {
-          pt: "Site Institucional para Igreja em REACT",
-          en: "Institutional website for a church in REACT",
+          pt: "Site Institucional para Igreja",
+          en: "Institutional website for a church",
         },
         link: "https://cia-primavera.vercel.app",
         icon: "bi-house-door",
         details: {
-          pt: "Site institucional para igreja com informações e eventos.",
-          en: "Institutional church website with information and events.",
+          pt: "Site institucional do Centro Internacional de Avivamento Primavera, com cultos, eventos e transmissões. Feito com HTML, CSS, JavaScript e Vite.",
+          en: "Institutional website of Centro Internacional de Avivamento Primavera, with services, events and live streams. Built with HTML, CSS, JavaScript and Vite.",
         },
         image: "../Projects/Centro Internacional de Avivamento Primavera.png",
         git: "https://github.com/Matheus-Fernando-br/CIA-PRIMAVERA",
@@ -443,8 +443,8 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         link: "https://mario-game-plum.vercel.app",
         icon: "bi-controller",
         details: {
-          pt: "Jogo simples do Mario feito em Java com Swing.",
-          en: "Simple Mario game made in Java using Swing.",
+          pt: "Jogo simples do Mario com tema de pulos, feito com HTML, CSS e JavaScript.",
+          en: "Simple Mario-themed jumping game made with HTML, CSS and JavaScript.",
         },
         image: "../Projects/Mario Game.png",
         git: "https://github.com/Matheus-Fernando-br/Mario-Game",
