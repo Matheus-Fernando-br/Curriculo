@@ -123,12 +123,14 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
             "Proficiente em troubleshooting avançado e otimização de hardware/software.",
             "Operação e manutenção de sistemas audiovisuais complexos (som, iluminação, projeção).",
             "Identificação de oportunidades de melhoria contínua para eficiência operacional e educacional.",
+            "Desenvolvimento do Gerador de Relatórios do colégio, que gera em PDF os formulários institucionais no padrão oficial da Rede Genoma.",
           ],
           en: [
             "Specialist in robust network infrastructure (LAN/WLAN) and scalable systems administration.",
             "Advanced troubleshooting and hardware/software optimization expertise.",
             "Operation and maintenance of complex audiovisual systems (sound, lighting, projection).",
             "Identification of continuous improvement opportunities for operational and educational efficiency.",
+            "Development of the school's Report Generator, which produces Rede Genoma's institutional forms as PDFs in the official format.",
           ],
         },
         link: "https://colegiogenoma.com.br",
@@ -219,6 +221,7 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
       },
       { nome: { pt: "TypeScript", en: "TYPESCRIPT" }, icon: "bi-filetype-tsx" },
       { nome: { pt: "Next.js", en: "NEXT.JS" }, icon: "bi-lightning-charge" },
+      { nome: { pt: "Tailwind CSS", en: "TAILWIND CSS" }, icon: "bi-wind" },
       {
         nome: { pt: "Node.Js/Express", en: "NODE.JS/EXPRESS" },
         icon: "bi-diagram-3",
@@ -305,6 +308,20 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
         },
         image: "../Projects/PROJETO FINC.png",
         git: "https://github.com/Matheus-Fernando-br/Project-FINC",
+      },
+      {
+        title: {
+          pt: "Gerador de Relatórios - Colégio Genoma",
+          en: "Report Generator - Colégio Genoma",
+        },
+        link: "https://github.com/Matheus-Fernando-br/GENOMA",
+        icon: "bi-file-earmark-text",
+        details: {
+          pt: "Sistema interno do Colégio Genoma Timóteo para preencher os formulários institucionais da Rede Genoma e gerar o PDF fiel aos modelos oficiais, com pré-visualização em tempo real, validação de campos, rascunho salvo no navegador e impressão do modelo em branco. Feito em Next.js, React, TypeScript e Tailwind CSS.",
+          en: "Internal system for Colégio Genoma Timóteo to fill in Rede Genoma's institutional forms and generate PDFs faithful to the official templates, with real-time preview, field validation, drafts saved in the browser and blank template printing. Built with Next.js, React, TypeScript and Tailwind CSS.",
+        },
+        image: "../Projects/Genoma Relatorios.png",
+        git: "https://github.com/Matheus-Fernando-br/GENOMA",
       },
       {
         title: {
@@ -529,8 +546,8 @@ I am driven by continuous learning, challenges, and the constant pursuit of exce
     // ------------------ CONQUISTAS ------------------
     minhasConquistas: [
       {
-        numero: 4,
-        descricao: { pt: "Projeto Concluído", en: "Completed Project" },
+        numero: 11,
+        descricao: { pt: "Projetos Concluídos", en: "Completed Projects" },
       },
       {
         numero: 2,
